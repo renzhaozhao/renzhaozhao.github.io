@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"renzhaozhao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="大前端之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Renzhao&#39;s Blog">
+<meta property="og:url" content="http://renzhaozhao.github.io/index.html">
+<meta property="og:site_name" content="Renzhao&#39;s Blog">
+<meta property="og:description" content="大前端之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Renzhao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://renzhaozhao.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Renzhao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <script type="text/javascript" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Renzhao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2021/05/13/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%88%9D%E6%8E%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%88%9D%E6%8E%A2/" class="post-title-link" itemprop="url">区块链初探</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 17:41:52 / 修改时间：19:33:37" itemprop="dateCreated datePublished" datetime="2021-05-13T17:41:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="使用docker搭建私有链"><a href="#使用docker搭建私有链" class="headerlink" title="使用docker搭建私有链"></a>使用docker搭建私有链</h2><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>创建创世区块文件<code>/dapp/private_chain/genesis.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"config"</span>: &#123;</span><br><span class="line">    <span class="attr">"chainId"</span>: <span class="number">008</span>,</span><br><span class="line">    <span class="attr">"homesteadBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip150Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip155Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip158Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"byzantiumBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"constantinopleBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"petersburgBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"istanbulBlock"</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"alloc"</span>: &#123;</span><br><span class="line">    <span class="attr">"0x0000000000000000000000000000000000000001"</span>: &#123;</span><br><span class="line">      <span class="attr">"balance"</span>: <span class="string">"100000000000000000000000"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"0x0000000000000000000000000000000000000002"</span>: &#123;</span><br><span class="line">      <span class="attr">"balance"</span>: <span class="string">"200000000000000000000000"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"coinbase"</span>: <span class="string">"0x0000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"difficulty"</span>: <span class="string">"0x2000"</span>,</span><br><span class="line">  <span class="attr">"extraData"</span>: <span class="string">"0x"</span>,</span><br><span class="line">  <span class="attr">"gasLimit"</span>: <span class="string">"0x800000000000"</span>,</span><br><span class="line">  <span class="attr">"nonce"</span>: <span class="string">"0x0000000000000042"</span>,</span><br><span class="line">  <span class="attr">"mixhash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"parentHash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"timestamp"</span>: <span class="string">"0x00"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>chainId</code>: 私有区块链的ID<br><code>homesteadBlock</code>：Homestead是以太坊平台的第二个主要版本，也是以太坊的第一个生产版本。它包括几个协议更改。由于我们已经在Homestead版本，因此该属性为0。<br><code>eip155Block/eip158Block</code>：Homestead版本发布时带有一些向后不兼容的协议更改，因此需要硬分叉。通过以太坊改进提案（EIPs）提出的这些协议变更/改进。然而，我们的链条不会因为这些变化而难以分解，所以保留为0。<br><code>difficulty</code>：此值用于控制区块链的块生成时间。难度越高，Miner在发现有效块时必须执行的统计更多计算。在我们的测试网络中，我们将保持此值低以避免在测试期间等待，因为需要生成有效块来执行交易处理区块链。<br><code>gasLimit</code>：此值指定每块的“gas”支出的当前链范围限制。gas是以太坊在交易过程中消耗的燃料。我们将在这种情况下将此值标记得足够高，以避免在测试期间受到限制。<br><code>alloc</code>：这是你可以创建你的钱包并用假ether预填充的地方。<br><code>coinbase</code>：矿工的账号</p>
+<h4 id="获取geth镜像"><a href="#获取geth镜像" class="headerlink" title="获取geth镜像"></a>获取geth镜像</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker pull ethereum/client-go:latest</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行私有链"><a href="#运行私有链" class="headerlink" title="运行私有链"></a>运行私有链</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  -itd \</span><br><span class="line">  --name geth \</span><br><span class="line">  -v /etc/localtime:/etc/localtime \</span><br><span class="line">  -v /etc/timezone:/etc/timezone   \</span><br><span class="line">  -v /dapp/private_chain/genesis.json:/dapp/genesis.json \</span><br><span class="line">  -v /dapp/private_chain:/dapp \</span><br><span class="line">  -p 8545:8545 \</span><br><span class="line">  -p 30303:30303 \</span><br><span class="line">  -p 30303:30303/udp \</span><br><span class="line">  --entrypoint /bin/sh \</span><br><span class="line">  ethereum/client-go:latest \</span><br></pre></td></tr></table></figure>
+
+<h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it geth sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="容器内ethereum环境操作"><a href="#容器内ethereum环境操作" class="headerlink" title="容器内ethereum环境操作"></a>容器内ethereum环境操作</h4><ul>
+<li><p>初始化genesis</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">geth init --datadir /dapp /dapp/genesis.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动私有链 进入geth控制台</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">geth --identity <span class="string">"miner_node"</span> --datadir /dapp --networkid 88 --rpc --rpcaddr 0.0.0.0 --rpcport <span class="string">"8545"</span> --port <span class="string">"30303"</span> --rpcapi <span class="string">"db,eth,net,web3"</span> --nodiscover console</span><br></pre></td></tr></table></figure></li>
+<li><p>创建账户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建账号</span></span><br><span class="line"><span class="comment"># 输入密码</span></span><br><span class="line"><span class="comment"># 获得账号地址</span></span><br><span class="line"></span><br><span class="line">&gt;personal.newAccount()</span><br><span class="line"></span><br><span class="line">Passphrase: </span><br><span class="line">Repeat passphrase: </span><br><span class="line"></span><br><span class="line">INFO [01-19|06:22:35.833] Your new key was generated               address=0x046c9A712c6c82579cf4F05379b157BAba760e6E</span><br><span class="line">WARN [01-19|06:22:35.833] Please backup your key file!             path=/root/privtedata/keystore/UTC--2021-01-18T22-22-32.826039142Z--046c9a712c6c82579cf4f05379b157baba760e6e</span><br><span class="line">WARN [01-19|06:22:35.833] Please remember your password! </span><br><span class="line"><span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：此时在/dapp/private_chain/keystore下面可以看到生成的keystore，需保存好密码及keystore</p>
+</blockquote>
+</li>
+<li><p>查看余额</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; eth.getBalance(<span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span>)</span><br><span class="line">0</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此时余额为零</p>
+</blockquote>
+</li>
+<li><p>获取以太币-挖矿</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; miner.start()</span><br><span class="line"></span><br><span class="line">INFO [01-19|06:25:02.328] Updated mining threads                   threads=8</span><br><span class="line">INFO [01-19|06:25:02.328] Transaction pool price threshold updated price=1000000000</span><br><span class="line">INFO [01-19|06:25:02.328] Etherbase automatically configured       address=0x046c9A712c6c82579cf4F05379b157BAba760e6E</span><br><span class="line">null</span><br><span class="line">&gt; INFO [01-19|06:25:02.329] Commit new mining work                   number=1 sealhash=<span class="string">"a14903…a8920b"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"353.38µs"</span></span><br><span class="line">INFO [01-19|06:25:04.318] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=0 elapsed=1.055s</span><br><span class="line">INFO [01-19|06:25:05.398] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=1 elapsed=2.135s</span><br><span class="line">INFO [01-19|06:25:06.452] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=2 elapsed=3.189s</span><br><span class="line">INFO [01-19|06:25:07.727] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=3 elapsed=4.464s</span><br><span class="line">INFO [01-19|06:25:08.802] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=4 elapsed=5.539s</span><br><span class="line">INFO [01-19|06:25:09.920] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=5 elapsed=6.657s</span><br><span class="line">INFO [01-19|06:25:11.077] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=6 elapsed=7.814s</span><br><span class="line">INFO [01-19|06:25:12.366] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=7 elapsed=9.103s</span><br><span class="line">INFO [01-19|06:25:13.857] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=8 elapsed=10.595s</span><br><span class="line">INFO [01-19|06:25:14.963] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=9 elapsed=11.700s</span><br><span class="line">INFO [01-19|06:25:16.023] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=10 elapsed=12.760s</span><br><span class="line">INFO [01-19|06:25:17.370] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=11 elapsed=14.107s</span><br><span class="line">INFO [01-19|06:25:18.688] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=12 elapsed=15.425s</span><br><span class="line">INFO [01-19|06:25:19.994] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=13 elapsed=16.731s</span><br><span class="line">INFO [01-19|06:25:21.245] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=14 elapsed=17.983s</span><br><span class="line">INFO [01-19|06:25:22.474] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=15 elapsed=19.211s</span><br></pre></td></tr></table></figure></li>
+<li><p>挖到矿了<br>直到percentage到100时，计算完毕就挖到矿了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">INFO [01-19|06:31:50.709] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=97 elapsed=4m29.670s</span><br><span class="line">INFO [01-19|06:31:54.026] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=98 elapsed=4m32.987s</span><br><span class="line">INFO [01-19|06:31:57.452] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=99 elapsed=4m36.414s</span><br><span class="line"></span><br><span class="line">INFO [01-19|06:31:57.479] Generated ethash verification cache      epoch=1 elapsed=4m36.420s</span><br><span class="line">INFO [01-19|06:34:45.039] Successfully sealed new block            number=1 sealhash=<span class="string">"a14903…a8920b"</span> <span class="built_in">hash</span>=<span class="string">"9ff2b2…bb5c8b"</span> elapsed=9m42.710s</span><br><span class="line">INFO [01-19|06:34:45.076] 🔨 mined potential block                  number=1 <span class="built_in">hash</span>=<span class="string">"9ff2b2…bb5c8b"</span></span><br><span class="line">INFO [01-19|06:34:45.056] Commit new mining work                   number=2 sealhash=<span class="string">"e438e6…ff51c4"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=17.093ms</span><br><span class="line">INFO [01-19|06:34:45.141] Successfully sealed new block            number=2 sealhash=<span class="string">"e438e6…ff51c4"</span> <span class="built_in">hash</span>=<span class="string">"d70210…3bca0d"</span> elapsed=84.626ms</span><br><span class="line">INFO [01-19|06:34:45.141] 🔨 mined potential block                  number=2 <span class="built_in">hash</span>=<span class="string">"d70210…3bca0d"</span></span><br><span class="line">INFO [01-19|06:34:45.141] Commit new mining work                   number=3 sealhash=<span class="string">"6a98b3…4bdc80"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"367.472µs"</span></span><br><span class="line">INFO [01-19|06:34:51.295] Successfully sealed new block            number=3 sealhash=<span class="string">"6a98b3…4bdc80"</span> <span class="built_in">hash</span>=<span class="string">"78d6cb…c033f5"</span> elapsed=6.153s</span><br><span class="line">INFO [01-19|06:34:51.324] 🔨 mined potential block                  number=3 <span class="built_in">hash</span>=<span class="string">"78d6cb…c033f5"</span></span><br><span class="line">INFO [01-19|06:34:51.296] Commit new mining work                   number=4 sealhash=<span class="string">"51be0d…46f2e8"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"642.359µs"</span></span><br><span class="line">INFO [01-19|06:35:02.689] Successfully sealed new block            number=4 sealhash=<span class="string">"51be0d…46f2e8"</span> <span class="built_in">hash</span>=<span class="string">"6086ce…98c928"</span> elapsed=11.393s</span><br><span class="line">INFO [01-19|06:35:02.828] 🔨 mined potential block                  number=4 <span class="built_in">hash</span>=<span class="string">"6086ce…98c928"</span></span><br><span class="line">INFO [01-19|06:35:02.824] Commit new mining work                   number=5 sealhash=<span class="string">"297750…ece4fb"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=134.563ms</span><br><span class="line">INFO [01-19|06:35:12.483] Successfully sealed new block            number=5 sealhash=<span class="string">"297750…ece4fb"</span> <span class="built_in">hash</span>=<span class="string">"addb2f…85c1ac"</span> elapsed=9.659s</span><br><span class="line">INFO [01-19|06:35:12.527] 🔨 mined potential block                  number=5 <span class="built_in">hash</span>=<span class="string">"addb2f…85c1ac"</span></span><br><span class="line">INFO [01-19|06:35:12.500] Commit new mining work                   number=6 sealhash=<span class="string">"284733…e3cbab"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=16.081ms</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;  eth.getBalance(<span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span>)</span><br><span class="line">96000000000000000000</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2021/05/13/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-title-link" itemprop="url">同花顺面试题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 17:38:50" itemprop="dateCreated datePublished" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如-isString"><a href="#1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如-isString" class="headerlink" title="1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如 isString()"></a>1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如 <code>isString()</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isString</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> n == <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBoolean</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> n == <span class="string">'boolean'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日-时-分-秒”"><a href="#2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日-时-分-秒”" class="headerlink" title="2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日 时:分:秒”"></a>2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日 时:分:秒”</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toDou</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'0'</span> + n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> dateParts = date.getFullYear() + <span class="string">'年'</span> + toDou(date.getMonth()) + <span class="string">'月'</span> + toDou(date.getDate()) + <span class="string">'日'</span>;</span><br><span class="line">    <span class="keyword">var</span> timeParts = toDou(date.getHours()) + <span class="string">':'</span> + toDou(date.getMinutes()) + <span class="string">':'</span> + toDou(date.getSeconds());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dateParts + <span class="string">' '</span> + timeParts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、如何显示隐藏一个DOM元素"><a href="#3、如何显示隐藏一个DOM元素" class="headerlink" title="3、如何显示隐藏一个DOM元素"></a>3、如何显示隐藏一个DOM元素</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'n'</span>).style.display = <span class="string">'block'</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'n'</span>).style.display = <span class="string">'none'</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/13/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2020/06/16/Node%E7%94%9F%E6%88%90excel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/16/Node%E7%94%9F%E6%88%90excel/" class="post-title-link" itemprop="url">Node生成excel</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 10:58:20" itemprop="dateCreated datePublished" datetime="2020-06-16T10:58:20+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>使用node-xlsx生成excel</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>性别</th>
+<th>年龄</th>
+<th>身高</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jack</td>
+<td>男</td>
+<td>18</td>
+<td>180</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>女</td>
+<td>19</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Ann</td>
+<td>女</td>
+<td>18</td>
+<td>162</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> xlsx = <span class="built_in">require</span>(<span class="string">'node-xlsx'</span>)</span><br><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">  [<span class="string">'Jack'</span>, <span class="string">'男'</span>, <span class="number">18</span>, <span class="number">180</span>],</span><br><span class="line">  [<span class="string">'Amy'</span>, <span class="string">'女'</span>, <span class="number">19</span>, <span class="number">165</span>],</span><br><span class="line">  [<span class="string">'Ann'</span>, <span class="string">'女'</span>, <span class="number">18</span>, <span class="number">162</span>],</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> buffer = xlsx.build([&#123; <span class="attr">name</span>: <span class="string">"mySheetName"</span>, <span class="attr">data</span>: data &#125;])</span><br><span class="line"></span><br><span class="line">fs.writeFile(<span class="string">'member.xlsx'</span>, buffer, <span class="string">'binary'</span>, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'生成成功'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>表头需要自行添加</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2020/05/28/Git%E9%AB%98%E9%98%B6%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/28/Git%E9%AB%98%E9%98%B6%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Git高阶操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-28 17:45:59" itemprop="dateCreated datePublished" datetime="2020-05-28T17:45:59+08:00">2020-05-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="提交回退修改合并"><a href="#提交回退修改合并" class="headerlink" title="提交回退修改合并"></a>提交回退修改合并</h2><h4 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="回到某个提交-代码在暂存区"><a href="#回到某个提交-代码在暂存区" class="headerlink" title="回到某个提交 代码在暂存区"></a>回到某个提交 代码在暂存区</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset -soft [<span class="built_in">hash</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="回到某个提交-代码还在-不在暂存区"><a href="#回到某个提交-代码还在-不在暂存区" class="headerlink" title="回到某个提交 代码还在 不在暂存区"></a>回到某个提交 代码还在 不在暂存区</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard [<span class="built_in">hash</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="回到某个提交-代码重置"><a href="#回到某个提交-代码重置" class="headerlink" title="回到某个提交 代码重置"></a>回到某个提交 代码重置</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard [<span class="built_in">hash</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改上次提交"><a href="#修改上次提交" class="headerlink" title="修改上次提交"></a>修改上次提交</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit --amend</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="合并前几次提交"><a href="#合并前几次提交" class="headerlink" title="合并前几次提交"></a>合并前几次提交</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git rebase -i HEAD~3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="强行推送"><a href="#强行推送" class="headerlink" title="强行推送"></a>强行推送</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git push origin HEAD --force</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="git-stash用法"><a href="#git-stash用法" class="headerlink" title="git stash用法"></a>git stash用法</h2><h4 id="将暂存区和工作区保存，可保存多次"><a href="#将暂存区和工作区保存，可保存多次" class="headerlink" title="将暂存区和工作区保存，可保存多次"></a>将暂存区和工作区保存，可保存多次</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git stash</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看保存进度列表"><a href="#查看保存进度列表" class="headerlink" title="查看保存进度列表"></a>查看保存进度列表</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git stash list</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="恢复保存进度"><a href="#恢复保存进度" class="headerlink" title="恢复保存进度"></a>恢复保存进度</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git stash pop [stash_id]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除一个进度"><a href="#删除一个进度" class="headerlink" title="删除一个进度"></a>删除一个进度</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git stash drop [stash_id]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除所有进度"><a href="#删除所有进度" class="headerlink" title="删除所有进度"></a>删除所有进度</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git stash clear</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><p>这篇文章下面讲解比较详细<br><a href="http://jartto.wang/2018/12/11/git-rebase/" target="_blank" rel="noopener">http://jartto.wang/2018/12/11/git-rebase/</a></p>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><h4 id="对比文件更改"><a href="#对比文件更改" class="headerlink" title="对比文件更改"></a>对比文件更改</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git diff &lt;file name&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看文件更改记录"><a href="#查看文件更改记录" class="headerlink" title="查看文件更改记录"></a>查看文件更改记录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git blame &lt;file name&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">压缩模式</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline</span></span><br><span class="line"></span><br><span class="line">图形模式</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --graph</span></span><br><span class="line"></span><br><span class="line">显示所有分支的历史记录</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --all</span></span><br><span class="line"></span><br><span class="line">混合使用</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --all --graph</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline --graph</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="列出commit"><a href="#列出commit" class="headerlink" title="列出commit"></a>列出commit</h4><p>git reflog则列出了head曾经指向过的一系列commit。要明白它们只存在于你本机中；而不是你的版本仓库的一部分，也不包含在push和merge操作中。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="post-title-link" itemprop="url">docker使用记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-22 10:20:59" itemprop="dateCreated datePublished" datetime="2020-05-22T10:20:59+08:00">2020-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>在docker里启动一个服务</p>
+<h3 id="编写服务代码"><a href="#编写服务代码" class="headerlink" title="编写服务代码"></a>编写服务代码</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = Koa()</span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'Hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'listen in 3000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写Dockerfile"><a href="#编写Dockerfile" class="headerlink" title="编写Dockerfile"></a>编写Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line"><span class="keyword">FROM</span> node:<span class="number">11.15</span>-alpine</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> node -v \</span></span><br><span class="line"><span class="bash">  &amp;&amp; npm -v</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> npm start</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="根据Dockerfile生成image"><a href="#根据Dockerfile生成image" class="headerlink" title="根据Dockerfile生成image"></a>根据Dockerfile生成image</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker build . -t node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建容器-映射端口"><a href="#创建容器-映射端口" class="headerlink" title="创建容器 映射端口"></a>创建容器 映射端口</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -d -p 3000:3000 -it --name hello-world node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>-it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。</li>
+<li>-d: 后台运行</li>
+</ul>
+<h3 id="查看所有容器和状态"><a href="#查看所有容器和状态" class="headerlink" title="查看所有容器和状态"></a>查看所有容器和状态</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps -a</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker start 2477af4679e2</span></span><br></pre></td></tr></table></figure>
+
+<p>访问<a href="http://localhost:3000查看">http://localhost:3000查看</a></p>
+<h3 id="查看运行的容器"><a href="#查看运行的容器" class="headerlink" title="查看运行的容器"></a>查看运行的容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it 2477af4679e2 sh</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Renzhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Renzhao</p>
+  <div class="site-description" itemprop="description">大前端之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Renzhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
