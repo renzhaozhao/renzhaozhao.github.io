@@ -187,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-05-13 17:41:52 / 修改时间：19:33:37" itemprop="dateCreated datePublished" datetime="2021-05-13T17:41:52+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 17:41:52" itemprop="dateCreated datePublished" datetime="2021-05-13T17:41:52+08:00">2021-05-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-01 11:58:25" itemprop="dateModified" datetime="2021-06-01T11:58:25+08:00">2021-06-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -215,7 +221,7 @@
           <h2 id="使用docker搭建私有链"><a href="#使用docker搭建私有链" class="headerlink" title="使用docker搭建私有链"></a>使用docker搭建私有链</h2><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>创建创世区块文件<code>/dapp/private_chain/genesis.json</code></p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"config"</span>: &#123;</span><br><span class="line">    <span class="attr">"chainId"</span>: <span class="number">008</span>,</span><br><span class="line">    <span class="attr">"homesteadBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip150Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip155Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"eip158Block"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"byzantiumBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"constantinopleBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"petersburgBlock"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"istanbulBlock"</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"alloc"</span>: &#123;</span><br><span class="line">    <span class="attr">"0x0000000000000000000000000000000000000001"</span>: &#123;</span><br><span class="line">      <span class="attr">"balance"</span>: <span class="string">"100000000000000000000000"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"0x0000000000000000000000000000000000000002"</span>: &#123;</span><br><span class="line">      <span class="attr">"balance"</span>: <span class="string">"200000000000000000000000"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"coinbase"</span>: <span class="string">"0x0000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"difficulty"</span>: <span class="string">"0x2000"</span>,</span><br><span class="line">  <span class="attr">"extraData"</span>: <span class="string">"0x"</span>,</span><br><span class="line">  <span class="attr">"gasLimit"</span>: <span class="string">"0x800000000000"</span>,</span><br><span class="line">  <span class="attr">"nonce"</span>: <span class="string">"0x0000000000000042"</span>,</span><br><span class="line">  <span class="attr">"mixhash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"parentHash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">  <span class="attr">"timestamp"</span>: <span class="string">"0x00"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><code>chainId</code>: 私有区块链的ID<br><code>homesteadBlock</code>：Homestead是以太坊平台的第二个主要版本，也是以太坊的第一个生产版本。它包括几个协议更改。由于我们已经在Homestead版本，因此该属性为0。<br><code>eip155Block/eip158Block</code>：Homestead版本发布时带有一些向后不兼容的协议更改，因此需要硬分叉。通过以太坊改进提案（EIPs）提出的这些协议变更/改进。然而，我们的链条不会因为这些变化而难以分解，所以保留为0。<br><code>difficulty</code>：此值用于控制区块链的块生成时间。难度越高，Miner在发现有效块时必须执行的统计更多计算。在我们的测试网络中，我们将保持此值低以避免在测试期间等待，因为需要生成有效块来执行交易处理区块链。<br><code>gasLimit</code>：此值指定每块的“gas”支出的当前链范围限制。gas是以太坊在交易过程中消耗的燃料。我们将在这种情况下将此值标记得足够高，以避免在测试期间受到限制。<br><code>alloc</code>：这是你可以创建你的钱包并用假ether预填充的地方。<br><code>coinbase</code>：矿工的账号</p>
+<p><code>chainId</code>: 私有区块链的ID<br><code>homesteadBlock</code>：Homestead是以太坊平台的第二个主要版本，也是以太坊的第一个生产版本。它包括几个协议更改。由于我们已经在Homestead版本，因此该属性为0。<br><code>eip155Block/eip158Block</code>：Homestead版本发布时带有一些向后不兼容的协议更改，因此需要硬分叉。通过以太坊改进提案（EIPs）提出的这些协议变更/改进。然而，我们的链条不会因为这些变化而难以分解，所以保留为0。<br><code>difficulty</code>：此值用于控制区块链的块生成时间。难度越高，Miner在发现有效块时必须执行的统计更多计算。在我们的测试网络中，我们将保持此值低以避免在测试期间等待，因为需要生成有效块来执行交易处理区块链。<br><code>gasLimit</code>：此值指定每块的“gas”支出的当前链范围限制。gas是以太坊在交易过程中消耗的燃料。我们将在这种情况下将此值标记得足够高，以避免在测试期间受到限制。<br><code>alloc</code>：这是你可以创建你的钱包并用假ether预填充的地方。注这里的单位是wei，1ETH=10^18wei，同下面获取余额单位。<br><code>coinbase</code>：矿工的账号</p>
 <h4 id="获取geth镜像"><a href="#获取geth镜像" class="headerlink" title="获取geth镜像"></a>获取geth镜像</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker pull ethereum/client-go:latest</span><br></pre></td></tr></table></figure>
 
 <h4 id="运行私有链"><a href="#运行私有链" class="headerlink" title="运行私有链"></a>运行私有链</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  -itd \</span><br><span class="line">  --name geth \</span><br><span class="line">  -v /etc/localtime:/etc/localtime \</span><br><span class="line">  -v /etc/timezone:/etc/timezone   \</span><br><span class="line">  -v /dapp/private_chain/genesis.json:/dapp/genesis.json \</span><br><span class="line">  -v /dapp/private_chain:/dapp \</span><br><span class="line">  -p 8545:8545 \</span><br><span class="line">  -p 30303:30303 \</span><br><span class="line">  -p 30303:30303/udp \</span><br><span class="line">  --entrypoint /bin/sh \</span><br><span class="line">  ethereum/client-go:latest \</span><br></pre></td></tr></table></figure>
@@ -227,7 +233,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">geth init --datadir /dapp /dapp/genesis.json</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>启动私有链 进入geth控制台</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">geth --identity <span class="string">"miner_node"</span> --datadir /dapp --networkid 88 --rpc --rpcaddr 0.0.0.0 --rpcport <span class="string">"8545"</span> --port <span class="string">"30303"</span> --rpcapi <span class="string">"db,eth,net,web3"</span> --nodiscover console</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">geth --identity <span class="string">"miner_node"</span> --datadir /dapp --networkid 88 --rpc --rpccorsdomain <span class="string">"*"</span> --rpcaddr 0.0.0.0 --rpcport <span class="string">"8545"</span> --port <span class="string">"30303"</span> --rpcapi <span class="string">"db,eth,net,web3"</span> --nodiscover console</span><br></pre></td></tr></table></figure></li>
 <li><p>创建账户</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建账号</span></span><br><span class="line"><span class="comment"># 输入密码</span></span><br><span class="line"><span class="comment"># 获得账号地址</span></span><br><span class="line"></span><br><span class="line">&gt;personal.newAccount()</span><br><span class="line"></span><br><span class="line">Passphrase: </span><br><span class="line">Repeat passphrase: </span><br><span class="line"></span><br><span class="line">INFO [01-19|06:22:35.833] Your new key was generated               address=0x046c9A712c6c82579cf4F05379b157BAba760e6E</span><br><span class="line">WARN [01-19|06:22:35.833] Please backup your key file!             path=/root/privtedata/keystore/UTC--2021-01-18T22-22-32.826039142Z--046c9a712c6c82579cf4f05379b157baba760e6e</span><br><span class="line">WARN [01-19|06:22:35.833] Please remember your password! </span><br><span class="line"><span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -244,8 +250,126 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; miner.start()</span><br><span class="line"></span><br><span class="line">INFO [01-19|06:25:02.328] Updated mining threads                   threads=8</span><br><span class="line">INFO [01-19|06:25:02.328] Transaction pool price threshold updated price=1000000000</span><br><span class="line">INFO [01-19|06:25:02.328] Etherbase automatically configured       address=0x046c9A712c6c82579cf4F05379b157BAba760e6E</span><br><span class="line">null</span><br><span class="line">&gt; INFO [01-19|06:25:02.329] Commit new mining work                   number=1 sealhash=<span class="string">"a14903…a8920b"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"353.38µs"</span></span><br><span class="line">INFO [01-19|06:25:04.318] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=0 elapsed=1.055s</span><br><span class="line">INFO [01-19|06:25:05.398] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=1 elapsed=2.135s</span><br><span class="line">INFO [01-19|06:25:06.452] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=2 elapsed=3.189s</span><br><span class="line">INFO [01-19|06:25:07.727] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=3 elapsed=4.464s</span><br><span class="line">INFO [01-19|06:25:08.802] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=4 elapsed=5.539s</span><br><span class="line">INFO [01-19|06:25:09.920] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=5 elapsed=6.657s</span><br><span class="line">INFO [01-19|06:25:11.077] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=6 elapsed=7.814s</span><br><span class="line">INFO [01-19|06:25:12.366] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=7 elapsed=9.103s</span><br><span class="line">INFO [01-19|06:25:13.857] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=8 elapsed=10.595s</span><br><span class="line">INFO [01-19|06:25:14.963] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=9 elapsed=11.700s</span><br><span class="line">INFO [01-19|06:25:16.023] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=10 elapsed=12.760s</span><br><span class="line">INFO [01-19|06:25:17.370] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=11 elapsed=14.107s</span><br><span class="line">INFO [01-19|06:25:18.688] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=12 elapsed=15.425s</span><br><span class="line">INFO [01-19|06:25:19.994] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=13 elapsed=16.731s</span><br><span class="line">INFO [01-19|06:25:21.245] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=14 elapsed=17.983s</span><br><span class="line">INFO [01-19|06:25:22.474] Generating DAG <span class="keyword">in</span> progress               epoch=0 percentage=15 elapsed=19.211s</span><br></pre></td></tr></table></figure></li>
 <li><p>挖到矿了<br>直到percentage到100时，计算完毕就挖到矿了</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">INFO [01-19|06:31:50.709] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=97 elapsed=4m29.670s</span><br><span class="line">INFO [01-19|06:31:54.026] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=98 elapsed=4m32.987s</span><br><span class="line">INFO [01-19|06:31:57.452] Generating DAG <span class="keyword">in</span> progress               epoch=1 percentage=99 elapsed=4m36.414s</span><br><span class="line"></span><br><span class="line">INFO [01-19|06:31:57.479] Generated ethash verification cache      epoch=1 elapsed=4m36.420s</span><br><span class="line">INFO [01-19|06:34:45.039] Successfully sealed new block            number=1 sealhash=<span class="string">"a14903…a8920b"</span> <span class="built_in">hash</span>=<span class="string">"9ff2b2…bb5c8b"</span> elapsed=9m42.710s</span><br><span class="line">INFO [01-19|06:34:45.076] 🔨 mined potential block                  number=1 <span class="built_in">hash</span>=<span class="string">"9ff2b2…bb5c8b"</span></span><br><span class="line">INFO [01-19|06:34:45.056] Commit new mining work                   number=2 sealhash=<span class="string">"e438e6…ff51c4"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=17.093ms</span><br><span class="line">INFO [01-19|06:34:45.141] Successfully sealed new block            number=2 sealhash=<span class="string">"e438e6…ff51c4"</span> <span class="built_in">hash</span>=<span class="string">"d70210…3bca0d"</span> elapsed=84.626ms</span><br><span class="line">INFO [01-19|06:34:45.141] 🔨 mined potential block                  number=2 <span class="built_in">hash</span>=<span class="string">"d70210…3bca0d"</span></span><br><span class="line">INFO [01-19|06:34:45.141] Commit new mining work                   number=3 sealhash=<span class="string">"6a98b3…4bdc80"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"367.472µs"</span></span><br><span class="line">INFO [01-19|06:34:51.295] Successfully sealed new block            number=3 sealhash=<span class="string">"6a98b3…4bdc80"</span> <span class="built_in">hash</span>=<span class="string">"78d6cb…c033f5"</span> elapsed=6.153s</span><br><span class="line">INFO [01-19|06:34:51.324] 🔨 mined potential block                  number=3 <span class="built_in">hash</span>=<span class="string">"78d6cb…c033f5"</span></span><br><span class="line">INFO [01-19|06:34:51.296] Commit new mining work                   number=4 sealhash=<span class="string">"51be0d…46f2e8"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=<span class="string">"642.359µs"</span></span><br><span class="line">INFO [01-19|06:35:02.689] Successfully sealed new block            number=4 sealhash=<span class="string">"51be0d…46f2e8"</span> <span class="built_in">hash</span>=<span class="string">"6086ce…98c928"</span> elapsed=11.393s</span><br><span class="line">INFO [01-19|06:35:02.828] 🔨 mined potential block                  number=4 <span class="built_in">hash</span>=<span class="string">"6086ce…98c928"</span></span><br><span class="line">INFO [01-19|06:35:02.824] Commit new mining work                   number=5 sealhash=<span class="string">"297750…ece4fb"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=134.563ms</span><br><span class="line">INFO [01-19|06:35:12.483] Successfully sealed new block            number=5 sealhash=<span class="string">"297750…ece4fb"</span> <span class="built_in">hash</span>=<span class="string">"addb2f…85c1ac"</span> elapsed=9.659s</span><br><span class="line">INFO [01-19|06:35:12.527] 🔨 mined potential block                  number=5 <span class="built_in">hash</span>=<span class="string">"addb2f…85c1ac"</span></span><br><span class="line">INFO [01-19|06:35:12.500] Commit new mining work                   number=6 sealhash=<span class="string">"284733…e3cbab"</span> uncles=0 txs=0 gas=0 fees=0 elapsed=16.081ms</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;  eth.getBalance(<span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span>)</span><br><span class="line">96000000000000000000</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
+<h2 id="MetaMask"><a href="#MetaMask" class="headerlink" title="MetaMask"></a>MetaMask</h2><p>安装MeataMask可以切换网络至<a href="http://localhost:8545，账户是用JSON文件导入，导入keystore，输入密码，可以实时查询余额">http://localhost:8545，账户是用JSON文件导入，导入keystore，输入密码，可以实时查询余额</a></p>
+<h2 id="Web3-js"><a href="#Web3-js" class="headerlink" title="Web3.js"></a>Web3.js</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Web3 = <span class="built_in">require</span>(<span class="string">'web3'</span>)</span><br><span class="line"><span class="comment">// 连接私有链</span></span><br><span class="line"><span class="keyword">const</span> web3 = <span class="keyword">new</span> Web3(<span class="string">"http://localhost:8545"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询账户</span></span><br><span class="line">web3.eth.getAccounts(<span class="function">(<span class="params">error,res</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!error)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询余额</span></span><br><span class="line">web3.eth.getBalance(<span class="string">"0x19fAe8328f9CD2869153a6fBF898ab6713337641"</span>)</span><br><span class="line">.then(<span class="built_in">console</span>.log)</span><br></pre></td></tr></table></figure>
+
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h4 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h4><p>密码不是私钥，是创建账户的密码</p>
+<h4 id="私钥"><a href="#私钥" class="headerlink" title="私钥"></a>私钥</h4><p>私钥由64位长度的十六进制的字符组成，私钥可以生成公钥，再生成地址，都不可逆。</p>
+<h4 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h4><p>助记词是私钥的另外一种展现形式，可以生成私钥，但不可逆。</p>
+<h4 id="keystore"><a href="#keystore" class="headerlink" title="keystore"></a>keystore</h4><p>将私钥已加密的形式保存为一份JSON文件，配合密码可以操作账户。</p>
+<h4 id="如何解锁账户"><a href="#如何解锁账户" class="headerlink" title="如何解锁账户"></a>如何解锁账户</h4><p>解锁账户有如下几种方式：</p>
+<ul>
+<li>私钥（Private Key）</li>
+<li>Keystore+密码（Keystore+Password）</li>
+<li>助记词（Mnemonic code）</li>
+</ul>
+<p>我们可以得到以下总结：</p>
+<ul>
+<li>通过私钥+密码可以生成keystore，即加密私钥。</li>
+<li>通过keystore+密码可以获取私钥，即解密keystore。</li>
+<li>通过助记词根据不同的路径获取不同的私钥，即使用HD钱包将助记词转化成种子来生成主私钥，然后派生海量的子私钥和地址。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2021/05/13/Linux%E6%9D%83%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/Linux%E6%9D%83%E9%99%90/" class="post-title-link" itemprop="url">Linux权限详解（chmod、600、644、666、700、711、755、777）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 17:41:52" itemprop="dateCreated datePublished" datetime="2021-05-13T17:41:52+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-17 20:50:52" itemprop="dateModified" datetime="2021-05-17T20:50:52+08:00">2021-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A8%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">全栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多人都听过600、644、777等linux权限，但是记不住那么多。其实这是有规律的，把规律记住就很好理解了。</p>
+<h1 id="权限介绍"><a href="#权限介绍" class="headerlink" title="权限介绍"></a>权限介绍</h1><ul>
+<li>Linux系统上对文件的权限有着严格的控制，用于如果相对某个文件执行某种操作，必须具有对应的权限方可执行成功。</li>
+<li>Linux下文件的权限类型一般包括读，写，执行。对应字母为 r、w、x。</li>
+<li>Linux下权限的粒度有 拥有者、群组、其它组 三种。每个文件都可以针对三个粒度，设置不同的rwx(读写执行)权限。通常情况下，一个文件只能归属于一个用户和组， 如果其它的用户想有这个文件的权限，则可以将该用户加入具备权限的群组，一个用户可以同时归属于多个组。</li>
+<li>Linux上通常使用chmod命令对文件的权限进行设置和更改。</li>
+</ul>
+<h3 id="十位权限表示"><a href="#十位权限表示" class="headerlink" title="十位权限表示"></a>十位权限表示</h3><p>第一位代表文件类型，后面每三位代表一个群组，三位中每一位对应rwx。<br><code>-(文件类型)rwx(拥有者读写执行)r--(群组读写执行)r--(其他组读写执行)</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">-rw------- (<span class="number">600</span>)    只有拥有者有读写权限。</span><br><span class="line">-rw-r--r-- (<span class="number">644</span>)    只有拥有者有读写权限；而属组用户和其他用户只有读权限。</span><br><span class="line">-rwx------ (<span class="number">700</span>)    只有拥有者有读、写、执行权限。</span><br><span class="line">-rwxr-xr-x (<span class="number">755</span>)    拥有者有读、写、执行权限；而属组用户和其他用户只有读、执行权限。</span><br><span class="line">-rwx--x--x (<span class="number">711</span>)    拥有者有读、写、执行权限；而属组用户和其他用户只有执行权限。</span><br><span class="line">-rw-rw-rw- (<span class="number">666</span>)    所有用户都有文件读、写权限。</span><br><span class="line">-rwxrwxrwx (<span class="number">777</span>)    所有用户都有读、写、执行权限。</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="数字权限使用格式"><a href="#数字权限使用格式" class="headerlink" title="数字权限使用格式"></a>数字权限使用格式</h3><p><code>r=4，w=2，x=1</code></p>
+<p>如：</p>
+<p>rwx = 4 + 2 + 1 = 7</p>
+<p>rw = 4 + 2 = 6</p>
+<p>rx = 4 + 1 = 5</p>
+<p>即</p>
+<p>若要同时设置 rwx (可读写运行） 权限则将该权限位 设置 为 4 + 2 + 1 = 7</p>
+<p>若要同时设置 rw- （可读写不可运行）权限则将该权限位 设置 为 4 + 2 = 6</p>
+<p>若要同时设置 r-x （可读可运行不可写）权限则将该权限位 设置 为 4 + 1 = 5</p>
+<p>文件类型</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">d代表的是目录(directroy)</span><br><span class="line">-代表的是文件(regular file)</span><br><span class="line">s代表的是套字文件(socket)</span><br><span class="line">p代表的管道文件(pipe)或命名管道文件(named pipe)</span><br><span class="line">l代表的是符号链接文件(symbolic link)</span><br><span class="line">b代表的是该文件是面向块的设备文件(block-oriented device file)</span><br><span class="line">c代表的是该文件是面向字符的设备文件(charcter-oriented device file)</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用chmod更改权限"><a href="#使用chmod更改权限" class="headerlink" title="使用chmod更改权限"></a>使用chmod更改权限</h1><p>算出权限对应的数字，就直接使用数字设定法就好了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 644 test.js</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -549,103 +673,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Renzhao">
-      <meta itemprop="description" content="大前端之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Renzhao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="post-title-link" itemprop="url">docker使用记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-22 10:20:59" itemprop="dateCreated datePublished" datetime="2020-05-22T10:20:59+08:00">2020-05-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>在docker里启动一个服务</p>
-<h3 id="编写服务代码"><a href="#编写服务代码" class="headerlink" title="编写服务代码"></a>编写服务代码</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = Koa()</span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'Hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'listen in 3000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="编写Dockerfile"><a href="#编写Dockerfile" class="headerlink" title="编写Dockerfile"></a>编写Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line"><span class="keyword">FROM</span> node:<span class="number">11.15</span>-alpine</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> node -v \</span></span><br><span class="line"><span class="bash">  &amp;&amp; npm -v</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> npm start</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="根据Dockerfile生成image"><a href="#根据Dockerfile生成image" class="headerlink" title="根据Dockerfile生成image"></a>根据Dockerfile生成image</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker build . -t node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建容器-映射端口"><a href="#创建容器-映射端口" class="headerlink" title="创建容器 映射端口"></a>创建容器 映射端口</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -d -p 3000:3000 -it --name hello-world node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>-it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。</li>
-<li>-d: 后台运行</li>
-</ul>
-<h3 id="查看所有容器和状态"><a href="#查看所有容器和状态" class="headerlink" title="查看所有容器和状态"></a>查看所有容器和状态</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps -a</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker start 2477af4679e2</span></span><br></pre></td></tr></table></figure>
-
-<p>访问<a href="http://localhost:3000查看">http://localhost:3000查看</a></p>
-<h3 id="查看运行的容器"><a href="#查看运行的容器" class="headerlink" title="查看运行的容器"></a>查看运行的容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it 2477af4679e2 sh</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -713,20 +744,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

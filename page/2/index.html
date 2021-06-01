@@ -164,6 +164,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/22/docker%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="post-title-link" itemprop="url">docker使用记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-22 10:20:59" itemprop="dateCreated datePublished" datetime="2020-05-22T10:20:59+08:00">2020-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>在docker里启动一个服务</p>
+<h3 id="编写服务代码"><a href="#编写服务代码" class="headerlink" title="编写服务代码"></a>编写服务代码</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = Koa()</span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'Hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'listen in 3000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写Dockerfile"><a href="#编写Dockerfile" class="headerlink" title="编写Dockerfile"></a>编写Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line"><span class="keyword">FROM</span> node:<span class="number">11.15</span>-alpine</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> node -v \</span></span><br><span class="line"><span class="bash">  &amp;&amp; npm -v</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> npm start</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="根据Dockerfile生成image"><a href="#根据Dockerfile生成image" class="headerlink" title="根据Dockerfile生成image"></a>根据Dockerfile生成image</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker build . -t node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建容器-映射端口"><a href="#创建容器-映射端口" class="headerlink" title="创建容器 映射端口"></a>创建容器 映射端口</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -d -p 3000:3000 -it --name hello-world node-server:1.0.0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>-it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。</li>
+<li>-d: 后台运行</li>
+</ul>
+<h3 id="查看所有容器和状态"><a href="#查看所有容器和状态" class="headerlink" title="查看所有容器和状态"></a>查看所有容器和状态</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps -a</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker start 2477af4679e2</span></span><br></pre></td></tr></table></figure>
+
+<p>访问<a href="http://localhost:3000查看">http://localhost:3000查看</a></p>
+<h3 id="查看运行的容器"><a href="#查看运行的容器" class="headerlink" title="查看运行的容器"></a>查看运行的容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it 2477af4679e2 sh</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2017/10/09/es-%E8%AF%AD%E6%B3%95%E7%B3%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -502,98 +595,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://renzhaozhao.github.io/2016/06/06/javascript%E5%B0%8F%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Renzhao">
-      <meta itemprop="description" content="大前端之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Renzhao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/06/06/javascript%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">javascript小技巧</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-06-06 17:32:43" itemprop="dateCreated datePublished" datetime="2016-06-06T17:32:43+08:00">2016-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-13 17:38:50" itemprop="dateModified" datetime="2021-05-13T17:38:50+08:00">2021-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>找出数组中的最大值、最小值</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr);</span><br><span class="line"><span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="built_in">Math</span>.max(...arr)</span><br><span class="line"><span class="built_in">Math</span>.min(...arr)</span><br></pre></td></tr></table></figure>
-
-<h3 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h3><p>使用正则表达式给所有string对象添加trim方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="将多维数组变成一维数组"><a href="#将多维数组变成一维数组" class="headerlink" title="将多维数组变成一维数组"></a>将多维数组变成一维数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="string">'2'</span>, [&#123;<span class="attr">name</span>:<span class="string">'renzhao'</span>&#125; ,<span class="number">4</span>], <span class="string">'哈哈'</span>], <span class="literal">true</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArr</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result=[];</span><br><span class="line">    flatten(arr);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">        arr.forEach(<span class="function">(<span class="params">v,i</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(v <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line">                flatten(v);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                result.push(v)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getArr(arr));</span><br></pre></td></tr></table></figure>
-
-<h3 id="简单的方法实现一个函数生成1-n的数组"><a href="#简单的方法实现一个函数生成1-n的数组" class="headerlink" title="简单的方法实现一个函数生成1~n的数组"></a>简单的方法实现一个函数生成1~n的数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.apply(<span class="literal">null</span>, <span class="built_in">Array</span>(n)).map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [...Array(n).keys()].map(<span class="function">(<span class="params">v, i</span>) =&gt;</span> i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>:n&#125;,(v, i) =&gt; i + <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="随机打乱一个数组"><a href="#随机打乱一个数组" class="headerlink" title="随机打乱一个数组"></a>随机打乱一个数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.sort(<span class="function"><span class="params">()</span> =&gt;</span> <span class="number">0.5</span> - <span class="built_in">Math</span>.random())</span><br></pre></td></tr></table></figure>
-
-<h3 id="数字隔三位加逗号"><a href="#数字隔三位加逗号" class="headerlink" title="数字隔三位加逗号"></a>数字隔三位加逗号</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatNumber</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = n.toString();</span><br><span class="line">    <span class="keyword">var</span> newStr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = str.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; count != <span class="number">0</span>) &#123;</span><br><span class="line">            newStr = str.charAt(i) + <span class="string">","</span> + newStr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            newStr = str.charAt(i) + newStr;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="JavaScript机试"><a href="#JavaScript机试" class="headerlink" title="JavaScript机试"></a>JavaScript机试</h3><p><a href="https://github.com/leftstick/fe-interview" target="_blank" rel="noopener">https://github.com/leftstick/fe-interview</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -661,20 +666,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
