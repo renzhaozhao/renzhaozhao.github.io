@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"renzhaozhao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="大前端之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Renzhao&#39;s Blog">
+<meta property="og:url" content="https://renzhaozhao.github.io/page/3/index.html">
+<meta property="og:site_name" content="Renzhao&#39;s Blog">
+<meta property="og:description" content="大前端之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Renzhao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://renzhaozhao.github.io/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Renzhao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <script type="text/javascript" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Renzhao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2017/10/09/es-%E8%AF%AD%E6%B3%95%E7%B3%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/10/09/es-%E8%AF%AD%E6%B3%95%E7%B3%96/" class="post-title-link" itemprop="url">es6+ 语法糖</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-10-09 14:41:11" itemprop="dateCreated datePublished" datetime="2017-10-09T14:41:11+08:00">2017-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 普通</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyReactComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(MyReactComponent)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es7</span></span><br><span class="line">@connect(mapStateToProps, mapDispatchToProps)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MyReactComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2017/09/12/React-Router4-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/12/React-Router4-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/" class="post-title-link" itemprop="url">React Router4 按需加载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-09-12 16:59:59" itemprop="dateCreated datePublished" datetime="2017-09-12T16:59:59+08:00">2017-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>新建 Bundle 组件<br>bundle.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bundle</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="comment">// short for "module" but that's a keyword in js, so "mod"</span></span><br><span class="line">    mod: <span class="literal">null</span>,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  componentWillMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.load(<span class="keyword">this</span>.props);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nextProps.load !== <span class="keyword">this</span>.props.load) &#123;</span><br><span class="line">      <span class="keyword">this</span>.load(nextProps);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  load(props) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      mod: <span class="literal">null</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    props.load(<span class="function">(<span class="params">mod</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        <span class="comment">// handle both es imports and cjs</span></span><br><span class="line">        mod: mod.default ? mod.default : mod,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.state.mod ? <span class="keyword">this</span>.props.children(<span class="keyword">this</span>.state.mod) : <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Bundle;</span><br></pre></td></tr></table></figure>
+
+<p>使用 bundle-loader<br>routes.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Bundle <span class="keyword">from</span> <span class="string">"./bundle"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">"./Index"</span>;</span><br><span class="line"><span class="keyword">import</span> Page1 <span class="keyword">from</span> <span class="string">"bundle-loader?lazy&amp;name=page1!./Page1"</span>;</span><br><span class="line"><span class="keyword">import</span> Page2 <span class="keyword">from</span> <span class="string">"bundle-loader?lazy&amp;name=page2!./Page2"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> loadComponent = <span class="function">(<span class="params">component</span>) =&gt;</span> <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">  &lt;Bundle load=&#123;component&#125;&gt;&#123;(Component) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">Component</span> /&gt;</span></span>&#125;&lt;<span class="regexp">/Bundle&gt;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const routes = () =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;Router&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;Route exact path="/</span><span class="string">" component=&#123;Index&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>/page1<span class="string">" component=&#123;loadComponent(Page1)&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>/page2<span class="string">" component=&#123;loadComponent(Page2)&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  &lt;/Router&gt;</span></span><br><span class="line"><span class="string">);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default routes;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就实现了按需加载</p>
+<p>wepack 里配置 hash 值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">  filename: <span class="string">'static/js/[name].[chunkhash:8].js'</span>,</span><br><span class="line">  chunkFilename: <span class="string">'static/js/[name].[chunkhash:8].js'</span>,</span><br><span class="line">  path: resolve(__dirname, <span class="string">'server/dist'</span>),</span><br><span class="line">  publicPath: <span class="string">'/'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2016/10/09/%E6%AD%A3%E5%88%99%E6%9C%AD%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/10/09/%E6%AD%A3%E5%88%99%E6%9C%AD%E8%AE%B0/" class="post-title-link" itemprop="url">正则札记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-10-09 15:02:48" itemprop="dateCreated datePublished" datetime="2016-10-09T15:02:48+08:00">2016-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="http://www.regexr.com/" target="_blank" rel="noopener">http://www.regexr.com/</a><br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="noopener">http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html</a></p>
+<h3 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h3><figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^((?!(<span class="symbol">\*</span>|//)).)+[<span class="symbol">\u</span>4e00-<span class="symbol">\u</span>9fa5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1 . 校验密码强度"></a>1 . 校验密码强度</h3><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间。</p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">^<span class="comment">(?=.*\\d)</span><span class="comment">(?=.*[a-z])</span><span class="comment">(?=.*[A-Z])</span>.&#123;<span class="number">8</span>,<span class="number">10</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2. 校验中文"></a>2. 校验中文</h3><p>字符串仅能是中文。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^[<span class="symbol">\\</span>u4e00-<span class="symbol">\\</span>u9fa5]&#123;0,&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-由数字、26-个英文字母或下划线组成的字符串"><a href="#3-由数字、26-个英文字母或下划线组成的字符串" class="headerlink" title="3. 由数字、26 个英文字母或下划线组成的字符串"></a>3. 由数字、26 个英文字母或下划线组成的字符串</h3><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">^\\w+<span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-校验-E-Mail-地址"><a href="#4-校验-E-Mail-地址" class="headerlink" title="4. 校验 E-Mail 地址"></a>4. 校验 E-Mail 地址</h3><p>同密码一样，下面是 E-mail 地址合规性的正则检查语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+(?:\\.[<span class="string">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+)<span class="emphasis">*@(?:[\\w](?:[\\w-]*</span>[<span class="string">\\w</span>])?\\.)+[<span class="string">\\w</span>](<span class="link">?:[\\w-]*[\\w]</span>)?</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-校验身份证号码"><a href="#5-校验身份证号码" class="headerlink" title="5. 校验身份证号码"></a>5. 校验身份证号码</h3><p>下面是身份证号码的正则校验。15 或 18 位。<br>15</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">7</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span><span class="number">-2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span><span class="number">-1</span>])\\d&#123;<span class="number">3</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<p>18</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">5</span>&#125;[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">3</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span><span class="number">-2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span><span class="number">-1</span>])\\d&#123;<span class="number">3</span>&#125;([<span class="number">0</span><span class="number">-9</span>]|X)$</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-校验日期"><a href="#6-校验日期" class="headerlink" title="6. 校验日期"></a>6. 校验日期</h3><p>yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">^(?:(?!0000)[<span class="string">0-9</span>]&#123;4&#125;-(?:(?:0[<span class="string">1-9</span>]|1[<span class="string">0-2</span>])-(?:0[<span class="string">1-9</span>]|1[<span class="string">0-9</span>]|2[<span class="string">0-8</span>])|(?:0[<span class="string">13-9</span>]|1[<span class="string">0-2</span>])-(?:29|30)|(?:0[<span class="string">13578</span>]|1[<span class="string">02</span>])-31)|(?:[<span class="string">0-9</span>]&#123;2&#125;(?:0[<span class="string">48</span>]|[<span class="string">2468</span>][<span class="symbol">048</span>]|[<span class="string">13579</span>][<span class="symbol">26</span>])|(?:0[<span class="string">48</span>]|[<span class="string">2468</span>][<span class="symbol">048</span>]|[<span class="string">13579</span>][<span class="symbol">26</span>])00)-02-29)$</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-校验金额"><a href="#7-校验金额" class="headerlink" title="7. 校验金额"></a>7. 校验金额</h3><p>金额校验，精确到 2 位小数。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">0</span><span class="number">-9</span>]+(.[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">2</span>&#125;)?$</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-校验手机号"><a href="#8-校验手机号" class="headerlink" title="8. 校验手机号"></a>8. 校验手机号</h3><p>下面是国内 13、15、18 开头的手机号正则表达式。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^(<span class="number">13</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">14</span>[<span class="number">5</span>|<span class="number">7</span>]|<span class="number">15</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>]|<span class="number">18</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>])\\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-判断-IE-的版本"><a href="#9-判断-IE-的版本" class="headerlink" title="9. 判断 IE 的版本"></a>9. 判断 IE 的版本</h3><p>IE 目前还没被完全取代，很多页面还是需要做版本兼容，下面是 IE 版本检查的表达式。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^.*MSIE [<span class="number">5</span><span class="number">-8</span>](?:\\.[<span class="number">0</span><span class="number">-9</span>]+)?(?!.*Trident\\/[<span class="number">5</span><span class="number">-9</span>]\\<span class="number">.0</span>).*$</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-校验-IP-v4-地址"><a href="#10-校验-IP-v4-地址" class="headerlink" title="10. 校验 IP-v4 地址"></a>10. 校验 IP-v4 地址</h3><p>IP4 正则语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\\b(?:(?:25[<span class="string">0-5</span>]|2[<span class="string">0-4</span>][<span class="symbol">0-9</span>]|[<span class="string">01</span>]?[<span class="string">0-9</span>][<span class="symbol">0-9</span>]?)\\.)&#123;3&#125;(?:25[<span class="string">0-5</span>]|2[<span class="string">0-4</span>][<span class="symbol">0-9</span>]|[<span class="string">01</span>]?[<span class="string">0-9</span>][<span class="symbol">0-9</span>]?)\\b</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-校验-IP-v6-地址"><a href="#11-校验-IP-v6-地址" class="headerlink" title="11. 校验 IP-v6 地址"></a>11. 校验 IP-v6 地址</h3><p>IP6 正则语句。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">(([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">7</span>,<span class="number">7</span>&#125;[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;:|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;|[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;)|:((:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;|:)|fe80:(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">0</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">4</span>&#125;%[<span class="number">0</span><span class="number">-9</span>a-zA-Z]&#123;<span class="number">1</span>,&#125;|::(ffff(:<span class="number">0</span>&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;:)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;((<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>]))</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-检查-URL-的前缀"><a href="#12-检查-URL-的前缀" class="headerlink" title="12. 检查 URL 的前缀"></a>12. 检查 URL 的前缀</h3><p>应用开发中很多时候需要区分请求是 HTTPS 还是 HTTP，通过下面的表达式可以取出一个 url 的前缀然后再逻辑判断。</p>
+<figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!s.<span class="keyword">match</span>(/^[a-zA-Z]+:\\/\\<span class="comment">//))</span></span><br><span class="line">&#123;</span><br><span class="line">    s = <span class="symbol">'http</span>:<span class="comment">//' + s;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-提取-URL-链接"><a href="#13-提取-URL-链接" class="headerlink" title="13. 提取 URL 链接"></a>13. 提取 URL 链接</h3><p>下面的这个表达式可以筛选出一段文本中的 URL。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^(f|ht)&#123;1&#125;(tp|tps):<span class="symbol">\\</span>/<span class="symbol">\\</span>/([<span class="symbol">\\</span>w-]+<span class="symbol">\\</span>.)+[<span class="symbol">\\</span>w-]+(<span class="symbol">\\</span>/[<span class="symbol">\\</span>w- ./?<span class="variable">%&amp;=]*)?</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-文件路径及扩展名校验"><a href="#14-文件路径及扩展名校验" class="headerlink" title="14. 文件路径及扩展名校验"></a>14. 文件路径及扩展名校验</h3><p>验证文件路径和扩展名</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^([a-zA-Z]<span class="symbol">\\</span>:|<span class="symbol">\\</span><span class="symbol">\\</span>)<span class="symbol">\\</span><span class="symbol">\\</span>([^<span class="symbol">\\</span><span class="symbol">\\</span>]+<span class="symbol">\\</span><span class="symbol">\\</span>)*[^<span class="symbol">\\</span>/:*?"&lt;&gt;|]+<span class="symbol">\\</span>.txt(l)?$</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-提取-Color-Hex-Codes"><a href="#15-提取-Color-Hex-Codes" class="headerlink" title="15. 提取 Color Hex Codes"></a>15. 提取 Color Hex Codes</h3><p>有时需要抽取网页中的颜色代码，可以使用下面的表达式。</p>
+<figure class="highlight leaf"><table><tr><td class="code"><pre><span class="line">\\<span class="function"><span class="keyword">#</span><span class="params">([<span class="variable">a</span>-<span class="variable">fA</span>-<span class="variable">F</span>]|[0-9])</span></span>&#123;3,6&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="16-提取网页图片"><a href="#16-提取网页图片" class="headerlink" title="16. 提取网页图片"></a>16. 提取网页图片</h3><p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line"><span class="symbol">\\</span>&lt; *[img][^<span class="symbol">\\</span>&gt;]*[src] *= *[<span class="symbol">\\</span>"<span class="symbol">\\</span>']&#123;0,1&#125;([^<span class="symbol">\\</span>"<span class="symbol">\\</span>'<span class="symbol">\\</span> &gt;]*)</span><br></pre></td></tr></table></figure>
+
+<h3 id="17-提取页面超链接"><a href="#17-提取页面超链接" class="headerlink" title="17. 提取页面超链接"></a>17. 提取页面超链接</h3><p>提取 html 中的超链接。</p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line"><span class="comment">(&lt;a\\s*(?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(href="https?://)</span><span class="comment">((?!(?:(?:www\\.)</span>?<span class="string">'.implode('</span>|<span class="comment">(?:www\\.)</span>?<span class="string">', $follow_list).'</span>))[^<span class="string">"]+)"</span><span class="comment">((?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(?:[^&gt;]*)</span>&gt;&lt;/a\\s*<span class="comment">(?!.*\\brel=)</span>[^&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="18-精炼-CSS"><a href="#18-精炼-CSS" class="headerlink" title="18. 精炼 CSS"></a>18. 精炼 CSS</h3><p>通过下面的表达式，可以搜索相同属性值的 CSS，从而达到精炼代码的目的。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^<span class="symbol">\\</span>s*[a-zA-Z<span class="symbol">\\</span>-]+<span class="symbol">\\</span>s*[:]&#123;1&#125;<span class="symbol">\\</span>s[a-zA-Z0-9<span class="symbol">\\</span>s.#]+[;]&#123;1&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="19-抽取注释"><a href="#19-抽取注释" class="headerlink" title="19. 抽取注释"></a>19. 抽取注释</h3><p>如果你需要移除 HMTL 中的注释，可以使用如下的表达式。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--(.*?)--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="20-匹配-HTML-标签"><a href="#20-匹配-HTML-标签" class="headerlink" title="20. 匹配 HTML 标签"></a>20. 匹配 HTML 标签</h3><p>通过下面的表达式可以匹配出 HTML 中的标签。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line"><span class="symbol">\\</span>s]+))?)+<span class="symbol">\\</span>s*|<span class="symbol">\\</span>s*)/?&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2016/09/12/%E7%AE%97%E6%B3%95%E6%9C%AD%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/09/12/%E7%AE%97%E6%B3%95%E6%9C%AD%E8%AE%B0/" class="post-title-link" itemprop="url">算法札记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-09-12 13:52:24" itemprop="dateCreated datePublished" datetime="2016-09-12T13:52:24+08:00">2016-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="线性查找-时间复杂度O-n-–相当于算法界中的HelloWorld"><a href="#线性查找-时间复杂度O-n-–相当于算法界中的HelloWorld" class="headerlink" title="线性查找-时间复杂度O(n)–相当于算法界中的HelloWorld"></a>线性查找-时间复杂度O(n)–相当于算法界中的HelloWorld</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linearSearch</span>(<span class="params">arr, x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] == x) &#123;</span><br><span class="line">      <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分查找-又称折半查找-适用于已排好序的线性结构-时间复杂度O-logN"><a href="#二分查找-又称折半查找-适用于已排好序的线性结构-时间复杂度O-logN" class="headerlink" title="二分查找(又称折半查找) - 适用于已排好序的线性结构 - 时间复杂度O(logN)"></a>二分查找(又称折半查找) - 适用于已排好序的线性结构 - 时间复杂度O(logN)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//二分搜索</span></span><br><span class="line"><span class="comment">//A为已按"升序排列"的数组，x为要查询的元素</span></span><br><span class="line"><span class="comment">//返回目标元素的下标</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">arr, x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> leftIndex = <span class="number">0</span>,</span><br><span class="line">      rightIndex = arr.length - <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> (leftIndex &lt;= rightIndex) &#123;</span><br><span class="line">    <span class="keyword">var</span> midIndex = <span class="built_in">Math</span>.floor((leftIndex + rightIndex) / <span class="number">2</span>) <span class="comment">//下取整</span></span><br><span class="line">    <span class="keyword">var</span> midVal = arr[midIndex]</span><br><span class="line">    <span class="keyword">if</span> (x == midVal) &#123;</span><br><span class="line">      <span class="keyword">return</span> midIndex</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; midVal) &#123;</span><br><span class="line">      rightIndex = midIndex - <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      leftIndex = midIndex + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="冒泡排序-–-时间复杂度O-n-2"><a href="#冒泡排序-–-时间复杂度O-n-2" class="headerlink" title="冒泡排序 – 时间复杂度O(n^2)"></a>冒泡排序 – 时间复杂度O(n^2)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> temp</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length - i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        temp = arr[j + <span class="number">1</span>]</span><br><span class="line">        arr[j + <span class="number">1</span>] = arr[j]</span><br><span class="line">        arr[j] = temp</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择排序-–-时间复杂度O-n-2"><a href="#选择排序-–-时间复杂度O-n-2" class="headerlink" title="选择排序 – 时间复杂度O(n^2)"></a>选择排序 – 时间复杂度O(n^2)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择排序</span></span><br><span class="line"><span class="comment">//思路：找到最小值的下标记下来，再交换</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> min, temp</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    min = i</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[min] &gt; arr[j])</span><br><span class="line">        min = j</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (min != i) &#123;</span><br><span class="line">      temp = arr[i]</span><br><span class="line">      arr[i] = arr[min]</span><br><span class="line">      arr[min] = temp</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入排序-–-时间复杂度O-n-2"><a href="#插入排序-–-时间复杂度O-n-2" class="headerlink" title="插入排序 – 时间复杂度O(n^2)"></a>插入排序 – 时间复杂度O(n^2)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//插入排序</span></span><br><span class="line"><span class="comment">//假定当前元素之前的元素已经排好序，先把自己的位置空出来，</span></span><br><span class="line"><span class="comment">//然后前面比自己大的元素依次向后移，直到空出一个"坑"，</span></span><br><span class="line"><span class="comment">//然后把目标元素插入"坑"中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> temp</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = arr[i]</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = i; j &gt; <span class="number">0</span> &amp;&amp; temp &lt; arr[j - <span class="number">1</span>]; j--) &#123;</span><br><span class="line">      arr[j] = arr[j - <span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    arr[j] = temp</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序-–-时间复杂度O-nlogn"><a href="#快速排序-–-时间复杂度O-nlogn" class="headerlink" title="快速排序 – 时间复杂度O(nlogn)"></a>快速排序 – 时间复杂度O(nlogn)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//（1）在数据集之中，选择一个元素作为"基准"（pivot）。</span></span><br><span class="line"><span class="comment">//（2）所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。</span></span><br><span class="line"><span class="comment">//（3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>)</span><br><span class="line">  <span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">var</span> left = []</span><br><span class="line">  <span class="keyword">var</span> right = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">      left.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      right.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串反转-–-时间复杂度O-logN"><a href="#字符串反转-–-时间复杂度O-logN" class="headerlink" title="字符串反转 – 时间复杂度O(logN)"></a>字符串反转 – 时间复杂度O(logN)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inverse</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr = s.split(<span class="string">''</span>)</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>,</span><br><span class="line">    j = arr.length - <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">    <span class="keyword">var</span> t = arr[i]</span><br><span class="line">    arr[i] = arr[j]</span><br><span class="line">    arr[j] = t</span><br><span class="line">    i++</span><br><span class="line">    j--</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr.join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。"><a href="#找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。" class="headerlink" title="找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。"></a>找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。</h3><p>1 =&gt; A，2 =&gt; B，3 =&gt; C，…，26 =&gt; Z，27 =&gt; AA，28 =&gt; AB，29 =&gt; AC，…，52 =&gt; AZ，53 =&gt; BA，…</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//10进制到26进制的转换</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convert</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = <span class="string">''</span></span><br><span class="line">  <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> m = num % <span class="number">26</span></span><br><span class="line">    <span class="keyword">if</span> (m === <span class="number">0</span>) &#123;</span><br><span class="line">      m = <span class="number">26</span></span><br><span class="line">    &#125;</span><br><span class="line">    s = (m + <span class="number">9</span>).toString(<span class="number">36</span>) + s</span><br><span class="line">    num = (num - m) / <span class="number">26</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> s.toUpperCase()</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(convert(<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2016/06/06/javascript%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/06/06/javascript%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">JavaScript小技巧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-06-06 17:32:43" itemprop="dateCreated datePublished" datetime="2016-06-06T17:32:43+08:00">2016-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>找出数组中的最大值、最小值</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</span><br><span class="line"><span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="built_in">Math</span>.max(...arr);</span><br><span class="line"><span class="built_in">Math</span>.min(...arr);</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h3><p>使用正则表达式给所有 string 对象添加 trim 方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="将多维数组变成一维数组"><a href="#将多维数组变成一维数组" class="headerlink" title="将多维数组变成一维数组"></a>将多维数组变成一维数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="string">"2"</span>, [&#123; <span class="attr">name</span>: <span class="string">"renzhao"</span> &#125;, <span class="number">4</span>], <span class="string">"哈哈"</span>], <span class="literal">true</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArr</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line">  flatten(arr);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    arr.forEach(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (v <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">        flatten(v);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.push(v);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getArr(arr));</span><br></pre></td></tr></table></figure>
+
+<h3 id="简单的方法实现一个函数生成-1-n-的数组"><a href="#简单的方法实现一个函数生成-1-n-的数组" class="headerlink" title="简单的方法实现一个函数生成 1~n 的数组"></a>简单的方法实现一个函数生成 1~n 的数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.apply(<span class="literal">null</span>, <span class="built_in">Array</span>(n)).map(<span class="function"><span class="keyword">function</span> (<span class="params">v, i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...Array(n).keys()].map(<span class="function">(<span class="params">v, i</span>) =&gt;</span> i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(&#123; <span class="attr">length</span>: n &#125;, (v, i) =&gt; i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="随机打乱一个数组"><a href="#随机打乱一个数组" class="headerlink" title="随机打乱一个数组"></a>随机打乱一个数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.sort(<span class="function"><span class="params">()</span> =&gt;</span> <span class="number">0.5</span> - <span class="built_in">Math</span>.random());</span><br></pre></td></tr></table></figure>
+
+<h3 id="数字隔三位加逗号"><a href="#数字隔三位加逗号" class="headerlink" title="数字隔三位加逗号"></a>数字隔三位加逗号</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatNumber</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> str = n.toString();</span><br><span class="line">  <span class="keyword">var</span> newStr = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = str.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="keyword">if</span> (count % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; count != <span class="number">0</span>) &#123;</span><br><span class="line">      newStr = str.charAt(i) + <span class="string">","</span> + newStr;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      newStr = str.charAt(i) + newStr;</span><br><span class="line">    &#125;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> newStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript-机试"><a href="#JavaScript-机试" class="headerlink" title="JavaScript 机试"></a>JavaScript 机试</h3><p><a href="https://github.com/leftstick/fe-interview" target="_blank" rel="noopener">https://github.com/leftstick/fe-interview</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Renzhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Renzhao</p>
+  <div class="site-description" itemprop="description">大前端之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Renzhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"renzhaozhao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="大前端之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Renzhao&#39;s Blog">
+<meta property="og:url" content="https://renzhaozhao.github.io/index.html">
+<meta property="og:site_name" content="Renzhao&#39;s Blog">
+<meta property="og:description" content="大前端之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Renzhao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://renzhaozhao.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Renzhao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <script type="text/javascript" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Renzhao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2024/01/21/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/21/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-title-link" itemprop="url">同花顺面试题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-21 10:28:35" itemprop="dateCreated datePublished" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如-isString"><a href="#1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如-isString" class="headerlink" title="1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如 isString()"></a>1、JavaScript包括哪些数据类型，请分别编写3种以上类型的判断函数，如 <code>isString()</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isString</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> n == <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBoolean</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> n == <span class="string">'boolean'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日-时-分-秒”"><a href="#2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日-时-分-秒”" class="headerlink" title="2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日 时:分:秒”"></a>2、编写一个JavaScript函数，试试显示当前时间，格式“年-月-日 时:分:秒”</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toDou</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'0'</span> + n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> dateParts = date.getFullYear() + <span class="string">'年'</span> + toDou(date.getMonth()) + <span class="string">'月'</span> + toDou(date.getDate()) + <span class="string">'日'</span>;</span><br><span class="line">    <span class="keyword">var</span> timeParts = toDou(date.getHours()) + <span class="string">':'</span> + toDou(date.getMinutes()) + <span class="string">':'</span> + toDou(date.getSeconds());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dateParts + <span class="string">' '</span> + timeParts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、如何显示隐藏一个DOM元素"><a href="#3、如何显示隐藏一个DOM元素" class="headerlink" title="3、如何显示隐藏一个DOM元素"></a>3、如何显示隐藏一个DOM元素</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'n'</span>).style.display = <span class="string">'block'</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'n'</span>).style.display = <span class="string">'none'</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/01/21/%E5%90%8C%E8%8A%B1%E9%A1%BA%E9%9D%A2%E8%AF%95%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2024/01/20/github%20%E8%BF%9E%E6%8E%A5%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/20/github%20%E8%BF%9E%E6%8E%A5%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">github 连接慢解决方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-20 17:41:52" itemprop="dateCreated datePublished" datetime="2024-01-20T17:41:52+08:00">2024-01-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:43:46" itemprop="dateModified" datetime="2024-01-21T10:43:46+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>众所周知，在中国大陆 git clone/pull/push 代码时非常慢。终端卡在那里，半天没有任何反应，不知道在干什么；好不容易连上 git 服务器，下载也是龟速。</p>
+<p>使用命令 检测连接速度 正常情况是没什么反应的</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h1 id="SSH-形式"><a href="#SSH-形式" class="headerlink" title="SSH 形式"></a>SSH 形式</h1><p>对于 SSH 方式，我们可以在 ~/.ssh/config 对 SSH 设置代理，提高 git clone/pull/push 的速度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    User git </span><br><span class="line">    HostName github</span><br><span class="line">    ProxyCommand nc -v -x 127.0.0.1:7890 %h %p</span><br></pre></td></tr></table></figure>
+<ul>
+<li>User 可以改成自己用户名 也可以不改</li>
+<li>代理端口根据自己代理改</li>
+<li>如果私钥权限有问题 需要加私钥地址 IdentityFile ~/.ssh/id_rsa</li>
+</ul>
+<p>设置好执行一下<br><img src="/images/ssh.png" alt="Alt text"></p>
+<h1 id="HTTP-形式"><a href="#HTTP-形式" class="headerlink" title="HTTP 形式"></a>HTTP 形式</h1><p>对于 HTTP 形式的仓库地址，可以在终端里输入以下两行命令，为 Git 设置全局的 HTTP 代理，从而提高 git clone/pull/push 的速度。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">"http://127.0.0.1:7890"</span></span><br><span class="line">git config --global https.proxy <span class="string">"http://127.0.0.1:7890"</span></span><br></pre></td></tr></table></figure>
+<p>执行完后 ~/.gitconfig 会多出几行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[http]</span><br><span class="line">	proxy &#x3D; http:&#x2F;&#x2F;127.0.0.1:7890</span><br><span class="line">[https]</span><br><span class="line">	proxy &#x3D; http:&#x2F;&#x2F;127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2022/01/14/tsconfig%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/14/tsconfig%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">tsconfig详解</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-14 15:01:41" itemprop="dateCreated datePublished" datetime="2022-01-14T15:01:41+08:00">2022-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Compiler-Options"><a href="#Compiler-Options" class="headerlink" title="Compiler Options"></a>Compiler Options</h1><h2 id="一级属性-Top-Level"><a href="#一级属性-Top-Level" class="headerlink" title="一级属性 Top Level"></a>一级属性 Top Level</h2><p>files,extends,include,exclude andreferences</p>
+<h2 id="compilerOptions"><a href="#compilerOptions" class="headerlink" title="compilerOptions"></a>compilerOptions</h2><h4 id="类型检查-Type-Checking"><a href="#类型检查-Type-Checking" class="headerlink" title="类型检查 Type Checking"></a>类型检查 Type Checking</h4><p>allowUnreachableCode, 默认值: false 不报告执行不到的代码错误 (不建议修改此选项)<br>allowUnusedLabels, 默认值: false 不报告未使用的标签错误<br>alwaysStrict, 默认值: false 以严格模式解析并为每个源文件生成 “use strict”语句<br>exactOptionalPropertyTypes<br>noFallthroughCasesInSwitch, 默认值: false 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）<br><code>noImplicitAny</code>, 默认值: false(strict 会开启) 是否可以使用 any 类型<br>noImplicitOverride,<br>noImplicitReturns,<br><code>noImplicitThis</code>,默认值: false(strict 会开启) 当 this 表达式的值为 any 类型的时候，生成一个错误<br>noPropertyAccessFromIndexSignature,<br>noUncheckedIndexedAccess,<br>noUnusedLocals,默认值: false 报告未使用的本地错误<br>noUnusedParameters,<br><code>strict</code>,默认值: false 开启相当于开启所有 strict 选项和 noImplicitAny、noImplicitThis<br>strictBindCallApply,<br>strictFunctionTypes,对函数类型启用严格检查<br>strictNullChecks,启用严格的 NULL 检查<br>strictPropertyInitialization<br>useUnknownInCatchVariables</p>
+<h4 id="模块-Modules"><a href="#模块-Modules" class="headerlink" title="模块 Modules"></a>模块 Modules</h4><p>allowUmdGlobalAccess,<br><code>baseUrl</code>,一般为’.’<br><code>module</code>,默认值 target === ‘ES6’ ? ‘ES6’ : ‘commonjs’, 可选 commonjs,amd,umd,system,esnext,node12,nodenext。一般为<code>lib为commonjs</code>，<code>es为esnext</code><br>moduleResolution,可选’classic’、’node’ 一般为’node’<br>noResolve,<br><code>paths</code>,基于 baseUrl 的路径映射的列表<br><code>resolveJsonModule</code>,默认值: false 模块导入 import 可以导入 .json 文件<br>rootDir,<br>rootDirs,<br>typeRoots<br><code>types</code>,Array<string> 取@types 的包</p>
+<h4 id="输出-Emit"><a href="#输出-Emit" class="headerlink" title="输出 Emit"></a>输出 Emit</h4><p><code>declaration</code>,默认值: false 构建 ts 文件时 生成相应的 .d.ts 文件<br>declarationDir,<br>declarationMap,<br>downlevelIteration,<br>emitBOM,<br>emitDeclarationOnly,<br><code>importHelpers</code>, 默认值: false import 提示，建议打开<br>importsNotUsedAsValues,<br>inlineSourceMap,<br>inlineSources,<br>mapRoot,<br>newLine,<br><code>noEmit</code>,默认值: false 不生成输出文件<br>noEmitHelpers,<br>noEmitOnError,<br><code>outDir</code>,编译目录<br>outFile,<br>preserveConstEnums,<br>preserveValueImports,<br>removeComments, 默认值: false 是否删除注释<br>sourceMap,默认值: false 生成相应的 .map 文件。<br>sourceRoot,<br>stripInternal</p>
+<h4 id="JavaScript-Support"><a href="#JavaScript-Support" class="headerlink" title="JavaScript Support"></a>JavaScript Support</h4><p><code>allowJs</code>,允许 js<br>checkJs,检查 js<br>maxNodeModuleJsDepth</p>
+<h4 id="Editor-Support"><a href="#Editor-Support" class="headerlink" title="Editor Support"></a>Editor Support</h4><p>disableSizeLimit andplugins</p>
+<h4 id="Interop-Constraints"><a href="#Interop-Constraints" class="headerlink" title="Interop Constraints"></a>Interop Constraints</h4><p>allowSyntheticDefaultImports,<br><code>esModuleInterop</code>,开启后默认开启 allowSyntheticDefaultImports,建议开启<br>forceConsistentCasingInFileNames,<br>isolatedModules<br>preserveSymlinks</p>
+<h4 id="Backwards-Compatibility"><a href="#Backwards-Compatibility" class="headerlink" title="Backwards Compatibility"></a>Backwards Compatibility</h4><p>charset,<br>keyofStringsOnly,<br>noImplicitUseStrict,<br>noStrictGenericChecks,<br>out,<br>suppressExcessPropertyErrors<br>suppressImplicitAnyIndexErrors</p>
+<h4 id="语言和环境-Language-and-Environment"><a href="#语言和环境-Language-and-Environment" class="headerlink" title="语言和环境 Language and Environment"></a>语言和环境 Language and Environment</h4><p>emitDecoratorMetadata,<br><code>experimentalDecorators</code>,默认值: false 为 ES 装饰器启用实验性支持 建议开启<br><code>jsx</code>,react 为 react-jsx<br>jsxFactory,<br>jsxFragmentFactory,<br>jsxImportSource,<br><code>lib</code>, Array<string> [“esnext”, “dom”, “dom.iterable”, “scripthost”]<br>noLib,<br>reactNamespace,<br><code>target</code>: 默认 ‘es3’,推荐 ‘esnext’<br>useDefineForClassFields</p>
+<h4 id="Compiler-Diagnostics"><a href="#Compiler-Diagnostics" class="headerlink" title="Compiler Diagnostics"></a>Compiler Diagnostics</h4><p>diagnostics,explainFiles,extendedDiagnostics,generateCpuProfile,listEmittedFiles,listFiles andtraceResolution</p>
+<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>composite,disableReferencedProjectLoad,disableSolutionSearching,disableSourceOfProjectReferenceRedirect,incremental andtsBuildInfoFile</p>
+<h4 id="Output-Formatting"><a href="#Output-Formatting" class="headerlink" title="Output Formatting"></a>Output Formatting</h4><p>noErrorTruncation,<br>preserveWatchOutput<br>pretty</p>
+<h4 id="Completeness"><a href="#Completeness" class="headerlink" title="Completeness"></a>Completeness</h4><p>skipDefaultLibCheck<br><code>skipLibCheck</code>,默认值: false 跳过所有声明文件的类型检查<code>（*.d.ts）</code></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"strict"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"jsx"</span>: <span class="string">"react-jsx"</span>,</span><br><span class="line">    <span class="attr">"lib"</span>: [<span class="string">"esnext"</span>, <span class="string">"dom"</span>, <span class="string">"dom.iterable"</span>, <span class="string">"scripthost"</span>],</span><br><span class="line">    <span class="attr">"importHelpers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"skipLibCheck"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"esModuleInterop"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// "noImplicitAny" 必要时关掉</span></span><br><span class="line">    <span class="attr">"baseUrl"</span>: <span class="string">"."</span>,</span><br><span class="line">    <span class="attr">"paths"</span>: &#123;</span><br><span class="line">      <span class="attr">"@/*"</span>: [<span class="string">"src/*"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"src"</span>],</span><br><span class="line">  <span class="attr">"exclude"</span>: [<span class="string">"node_modules"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2022/01/14/Node+ts%E5%88%9D%E6%8E%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/14/Node+ts%E5%88%9D%E6%8E%A2/" class="post-title-link" itemprop="url">Node+ts初探</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-14 14:25:32" itemprop="dateCreated datePublished" datetime="2022-01-14T14:25:32+08:00">2022-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="简单启动"><a href="#简单启动" class="headerlink" title="简单启动"></a>简单启动</h1><p>正常用 js 文件启动是</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; node src/index</span><br></pre></td></tr></table></figure>
+
+<p>改成 ts 后</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; ts-node src/index.ts</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-nodemon"><a href="#使用-nodemon" class="headerlink" title="使用 nodemon"></a>使用 nodemon</h1><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nodemon --watch <span class="string">'src/**'</span> --<span class="built_in">exec</span> ts-node</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-alias"><a href="#使用-alias" class="headerlink" title="使用 alias"></a>使用 alias</h1><p>使用 alias 后 ts 识别不出来，需要用到 tsconfig-paths 和 tscpaths</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nodemon --watch <span class="string">'src/**'</span> --<span class="built_in">exec</span> ts-node -r tsconfig-paths/register src/index.ts --files</span><br></pre></td></tr></table></figure>
+
+<p>tsc 编译时</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; tsc &amp;&amp; tscpaths -p tsconfig.json -s ./src -o ./dist</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2021/06/25/ClashX%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/25/ClashX%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">科学上网神器ClashX配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-25 17:20:22" itemprop="dateCreated datePublished" datetime="2021-06-25T17:20:22+08:00">2021-06-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>科学上网大家用的最多的应该是小飞机和 V2RAY，配置起来方便，用起来还挺好用的。不过最近因工作需要，经常要切 vpn 来访问不同的网络，每次切换挺麻烦的。同事给安利了一个神器 ClashX，简单来说可以<strong>根据不用域名来自动匹配对应的 vpn</strong>。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>下载安装，选择配置文件这些就不详细介绍了，网上很多教程，本文主要讲述<strong>配置文件</strong>。</p>
+<h1 id="情景模拟"><a href="#情景模拟" class="headerlink" title="情景模拟"></a>情景模拟</h1><p>现在假设我们需要满足以下需求</p>
+<ul>
+<li>访问 google（科学上网）</li>
+<li>使用一个 ss 访问 xx.example1.com</li>
+<li>使用一个 v2ray 访问 xx.example2.com</li>
+</ul>
+<h1 id="配置文件结构"><a href="#配置文件结构" class="headerlink" title="配置文件结构"></a>配置文件结构</h1><p>示例</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基础配置（一般不需要修改）</span></span><br><span class="line"><span class="attr">mixed-port:</span> <span class="number">7890</span></span><br><span class="line"><span class="attr">external-controller:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:9090</span></span><br><span class="line"><span class="attr">allow-lan:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">mode:</span> <span class="string">rule</span></span><br><span class="line"><span class="attr">log-level:</span> <span class="string">warning</span></span><br><span class="line"><span class="comment"># 代理配置</span></span><br><span class="line"><span class="attr">proxies:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">"vpn1"</span> <span class="comment">#名称</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">ss</span> <span class="comment"># 类型ss</span></span><br><span class="line">    <span class="attr">server:</span> <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span> <span class="comment"># 服务器ip</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">8888</span> <span class="comment"># 端口</span></span><br><span class="line">    <span class="attr">cipher:</span> <span class="string">aes-256-cfb</span> <span class="comment"># 加密方式</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">"mima"</span> <span class="comment"># 密码</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">"vpn2"</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">vmess</span></span><br><span class="line">    <span class="attr">server:</span> <span class="string">xx.example.com</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">83</span></span><br><span class="line">    <span class="attr">uuid:</span> <span class="string">1as23-ad2a-23fs-sdf3-23dfdv3f</span></span><br><span class="line">    <span class="attr">alterId:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">cipher:</span> <span class="string">auto</span></span><br><span class="line">    <span class="attr">tls:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">skip-cert-verify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">network:</span> <span class="string">ws</span></span><br><span class="line">    <span class="attr">ws-path:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">ws-headers:</span></span><br><span class="line">      <span class="attr">Host:</span> <span class="string">xx.example.com</span> <span class="comment"># 填你的主机名</span></span><br><span class="line"><span class="comment"># 代理组配置</span></span><br><span class="line"><span class="attr">proxy-groups:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">"自动选择"</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">url-test</span></span><br><span class="line">    <span class="attr">proxies:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"vpn1"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"vpn2"</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">"https://www.google.com/"</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">300</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">"PROXY1"</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">url-test</span></span><br><span class="line">    <span class="attr">proxies:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"vpn1"</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">"https://xx.example1.com/"</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">300</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">"PROXY2"</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">url-test</span></span><br><span class="line">    <span class="attr">proxies:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"vpn2"</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">"https://xx.example2.com/"</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">300</span></span><br><span class="line"><span class="comment"># 匹配规则</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line">  <span class="comment"># xx.example1.com使用PROXY1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,xx.example1.com,PROXY1</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># xx.example2.com使用PROXY1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,xx.example2.com,PROXY2</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 使用自动选择</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,google.com,自动选择</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,facebook.com,自动选择</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,twitter.com,自动选择</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 没匹配到的不用代理，一般放最后</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">MATCH,DIRECT</span></span><br></pre></td></tr></table></figure>
+
+<p>基础配置和代理配置就不多说了，前者不需要改，后者从小飞机或 v2ray 把配置贴到对应的位置就好了</p>
+<h3 id="代理组配置"><a href="#代理组配置" class="headerlink" title="代理组配置"></a>代理组配置</h3><p>域名匹配后直接对应的是代理组<br><strong>配置项</strong></p>
+<ul>
+<li>name: 随意字符</li>
+<li>type: url-test 通过指定的 URL 测试并选择延迟最低的节点 | select 手动选择节点</li>
+<li>proxies: 选择对应代理，可以一个也可以多个</li>
+<li>url: 测试的 url url-test 配置</li>
+<li>interval: 300 url-test 配置</li>
+</ul>
+<h3 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h3><p>结构</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$&#123;type&#125;,$&#123;domain&#125;,$&#123;group&#125;</span><br></pre></td></tr></table></figure>
+
+<p>type 可以根据全域名或者域名后缀来设置，也可以通过 IP 设置<br>DOMAIN: 全域名<br>DOMAIN-SUFFIX; 域名后缀，相当于 pac 里的*.域名</p>
+<p>IP 匹配结构<br>IP-CIDR,${ip}/${32},${group}</p>
+<p>32 代表全匹配<br>24 代表前三位匹配<br>16 代表前二位匹配<br>8 代表第一位匹配</p>
+<h3 id="机场"><a href="#机场" class="headerlink" title="机场"></a>机场</h3><p><a href="https://cocoyunxyz.github.io" target="_blank" rel="noopener">https://cocoyunxyz.github.io</a><br><a href="https://xxcer.com" target="_blank" rel="noopener">https://xxcer.com</a><br><a href="https://jisumax.net" target="_blank" rel="noopener">https://jisumax.net</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Renzhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Renzhao</p>
+  <div class="site-description" itemprop="description">大前端之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Renzhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

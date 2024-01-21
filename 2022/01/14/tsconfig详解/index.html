@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"renzhaozhao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Compiler Options一级属性 Top Levelfiles,extends,include,exclude andreferences compilerOptions类型检查 Type CheckingallowUnreachableCode, 默认值: false 不报告执行不到的代码错误 (不建议修改此选项)allowUnusedLabels, 默认值: false 不报告未使用的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tsconfig详解">
+<meta property="og:url" content="https://renzhaozhao.github.io/2022/01/14/tsconfig%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Renzhao&#39;s Blog">
+<meta property="og:description" content="Compiler Options一级属性 Top Levelfiles,extends,include,exclude andreferences compilerOptions类型检查 Type CheckingallowUnreachableCode, 默认值: false 不报告执行不到的代码错误 (不建议修改此选项)allowUnusedLabels, 默认值: false 不报告未使用的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-14T07:01:41.000Z">
+<meta property="article:modified_time" content="2024-01-21T02:28:35.946Z">
+<meta property="article:author" content="Renzhao">
+<meta property="article:tag" content="TypeScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://renzhaozhao.github.io/2022/01/14/tsconfig%E8%AF%A6%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>tsconfig详解 | Renzhao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <script type="text/javascript" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Renzhao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2022/01/14/tsconfig%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          tsconfig详解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-14 15:01:41" itemprop="dateCreated datePublished" datetime="2022-01-14T15:01:41+08:00">2022-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Compiler-Options"><a href="#Compiler-Options" class="headerlink" title="Compiler Options"></a>Compiler Options</h1><h2 id="一级属性-Top-Level"><a href="#一级属性-Top-Level" class="headerlink" title="一级属性 Top Level"></a>一级属性 Top Level</h2><p>files,extends,include,exclude andreferences</p>
+<h2 id="compilerOptions"><a href="#compilerOptions" class="headerlink" title="compilerOptions"></a>compilerOptions</h2><h4 id="类型检查-Type-Checking"><a href="#类型检查-Type-Checking" class="headerlink" title="类型检查 Type Checking"></a>类型检查 Type Checking</h4><p>allowUnreachableCode, 默认值: false 不报告执行不到的代码错误 (不建议修改此选项)<br>allowUnusedLabels, 默认值: false 不报告未使用的标签错误<br>alwaysStrict, 默认值: false 以严格模式解析并为每个源文件生成 “use strict”语句<br>exactOptionalPropertyTypes<br>noFallthroughCasesInSwitch, 默认值: false 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）<br><code>noImplicitAny</code>, 默认值: false(strict 会开启) 是否可以使用 any 类型<br>noImplicitOverride,<br>noImplicitReturns,<br><code>noImplicitThis</code>,默认值: false(strict 会开启) 当 this 表达式的值为 any 类型的时候，生成一个错误<br>noPropertyAccessFromIndexSignature,<br>noUncheckedIndexedAccess,<br>noUnusedLocals,默认值: false 报告未使用的本地错误<br>noUnusedParameters,<br><code>strict</code>,默认值: false 开启相当于开启所有 strict 选项和 noImplicitAny、noImplicitThis<br>strictBindCallApply,<br>strictFunctionTypes,对函数类型启用严格检查<br>strictNullChecks,启用严格的 NULL 检查<br>strictPropertyInitialization<br>useUnknownInCatchVariables</p>
+<h4 id="模块-Modules"><a href="#模块-Modules" class="headerlink" title="模块 Modules"></a>模块 Modules</h4><p>allowUmdGlobalAccess,<br><code>baseUrl</code>,一般为’.’<br><code>module</code>,默认值 target === ‘ES6’ ? ‘ES6’ : ‘commonjs’, 可选 commonjs,amd,umd,system,esnext,node12,nodenext。一般为<code>lib为commonjs</code>，<code>es为esnext</code><br>moduleResolution,可选’classic’、’node’ 一般为’node’<br>noResolve,<br><code>paths</code>,基于 baseUrl 的路径映射的列表<br><code>resolveJsonModule</code>,默认值: false 模块导入 import 可以导入 .json 文件<br>rootDir,<br>rootDirs,<br>typeRoots<br><code>types</code>,Array<string> 取@types 的包</p>
+<h4 id="输出-Emit"><a href="#输出-Emit" class="headerlink" title="输出 Emit"></a>输出 Emit</h4><p><code>declaration</code>,默认值: false 构建 ts 文件时 生成相应的 .d.ts 文件<br>declarationDir,<br>declarationMap,<br>downlevelIteration,<br>emitBOM,<br>emitDeclarationOnly,<br><code>importHelpers</code>, 默认值: false import 提示，建议打开<br>importsNotUsedAsValues,<br>inlineSourceMap,<br>inlineSources,<br>mapRoot,<br>newLine,<br><code>noEmit</code>,默认值: false 不生成输出文件<br>noEmitHelpers,<br>noEmitOnError,<br><code>outDir</code>,编译目录<br>outFile,<br>preserveConstEnums,<br>preserveValueImports,<br>removeComments, 默认值: false 是否删除注释<br>sourceMap,默认值: false 生成相应的 .map 文件。<br>sourceRoot,<br>stripInternal</p>
+<h4 id="JavaScript-Support"><a href="#JavaScript-Support" class="headerlink" title="JavaScript Support"></a>JavaScript Support</h4><p><code>allowJs</code>,允许 js<br>checkJs,检查 js<br>maxNodeModuleJsDepth</p>
+<h4 id="Editor-Support"><a href="#Editor-Support" class="headerlink" title="Editor Support"></a>Editor Support</h4><p>disableSizeLimit andplugins</p>
+<h4 id="Interop-Constraints"><a href="#Interop-Constraints" class="headerlink" title="Interop Constraints"></a>Interop Constraints</h4><p>allowSyntheticDefaultImports,<br><code>esModuleInterop</code>,开启后默认开启 allowSyntheticDefaultImports,建议开启<br>forceConsistentCasingInFileNames,<br>isolatedModules<br>preserveSymlinks</p>
+<h4 id="Backwards-Compatibility"><a href="#Backwards-Compatibility" class="headerlink" title="Backwards Compatibility"></a>Backwards Compatibility</h4><p>charset,<br>keyofStringsOnly,<br>noImplicitUseStrict,<br>noStrictGenericChecks,<br>out,<br>suppressExcessPropertyErrors<br>suppressImplicitAnyIndexErrors</p>
+<h4 id="语言和环境-Language-and-Environment"><a href="#语言和环境-Language-and-Environment" class="headerlink" title="语言和环境 Language and Environment"></a>语言和环境 Language and Environment</h4><p>emitDecoratorMetadata,<br><code>experimentalDecorators</code>,默认值: false 为 ES 装饰器启用实验性支持 建议开启<br><code>jsx</code>,react 为 react-jsx<br>jsxFactory,<br>jsxFragmentFactory,<br>jsxImportSource,<br><code>lib</code>, Array<string> [“esnext”, “dom”, “dom.iterable”, “scripthost”]<br>noLib,<br>reactNamespace,<br><code>target</code>: 默认 ‘es3’,推荐 ‘esnext’<br>useDefineForClassFields</p>
+<h4 id="Compiler-Diagnostics"><a href="#Compiler-Diagnostics" class="headerlink" title="Compiler Diagnostics"></a>Compiler Diagnostics</h4><p>diagnostics,explainFiles,extendedDiagnostics,generateCpuProfile,listEmittedFiles,listFiles andtraceResolution</p>
+<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>composite,disableReferencedProjectLoad,disableSolutionSearching,disableSourceOfProjectReferenceRedirect,incremental andtsBuildInfoFile</p>
+<h4 id="Output-Formatting"><a href="#Output-Formatting" class="headerlink" title="Output Formatting"></a>Output Formatting</h4><p>noErrorTruncation,<br>preserveWatchOutput<br>pretty</p>
+<h4 id="Completeness"><a href="#Completeness" class="headerlink" title="Completeness"></a>Completeness</h4><p>skipDefaultLibCheck<br><code>skipLibCheck</code>,默认值: false 跳过所有声明文件的类型检查<code>（*.d.ts）</code></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"strict"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"jsx"</span>: <span class="string">"react-jsx"</span>,</span><br><span class="line">    <span class="attr">"lib"</span>: [<span class="string">"esnext"</span>, <span class="string">"dom"</span>, <span class="string">"dom.iterable"</span>, <span class="string">"scripthost"</span>],</span><br><span class="line">    <span class="attr">"importHelpers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"skipLibCheck"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"esModuleInterop"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// "noImplicitAny" 必要时关掉</span></span><br><span class="line">    <span class="attr">"baseUrl"</span>: <span class="string">"."</span>,</span><br><span class="line">    <span class="attr">"paths"</span>: &#123;</span><br><span class="line">      <span class="attr">"@/*"</span>: [<span class="string">"src/*"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"src"</span>],</span><br><span class="line">  <span class="attr">"exclude"</span>: [<span class="string">"node_modules"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TypeScript/" rel="tag"># TypeScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/14/Node+ts%E5%88%9D%E6%8E%A2/" rel="prev" title="Node+ts初探">
+      <i class="fa fa-chevron-left"></i> Node+ts初探
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/01/20/github%20%E8%BF%9E%E6%8E%A5%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="github 连接慢解决方案">
+      github 连接慢解决方案 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Compiler-Options"><span class="nav-number">1.</span> <span class="nav-text">Compiler Options</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一级属性-Top-Level"><span class="nav-number">1.1.</span> <span class="nav-text">一级属性 Top Level</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compilerOptions"><span class="nav-number">1.2.</span> <span class="nav-text">compilerOptions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类型检查-Type-Checking"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">类型检查 Type Checking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块-Modules"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">模块 Modules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出-Emit"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">输出 Emit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-Support"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">JavaScript Support</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Editor-Support"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">Editor Support</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Interop-Constraints"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">Interop Constraints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Backwards-Compatibility"><span class="nav-number">1.2.0.7.</span> <span class="nav-text">Backwards Compatibility</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语言和环境-Language-and-Environment"><span class="nav-number">1.2.0.8.</span> <span class="nav-text">语言和环境 Language and Environment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Compiler-Diagnostics"><span class="nav-number">1.2.0.9.</span> <span class="nav-text">Compiler Diagnostics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Projects"><span class="nav-number">1.2.0.10.</span> <span class="nav-text">Projects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Formatting"><span class="nav-number">1.2.0.11.</span> <span class="nav-text">Output Formatting</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Completeness"><span class="nav-number">1.2.0.12.</span> <span class="nav-text">Completeness</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Renzhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Renzhao</p>
+  <div class="site-description" itemprop="description">大前端之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Renzhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

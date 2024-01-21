@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"renzhaozhao.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="http:&#x2F;&#x2F;www.regexr.com&#x2F;http:&#x2F;&#x2F;www.cnblogs.com&#x2F;huxi&#x2F;archive&#x2F;2010&#x2F;07&#x2F;04&#x2F;1771073.html 中文^((?!(\*|&#x2F;&#x2F;)).)+[\u4e00-\u9fa5]  1 . 校验密码强度密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间。 ^(?&#x3D;.*\\d)(?&#x3D;.*[a-z])(?&#x3D;.*[A-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则札记">
+<meta property="og:url" content="https://renzhaozhao.github.io/2016/10/09/%E6%AD%A3%E5%88%99%E6%9C%AD%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Renzhao&#39;s Blog">
+<meta property="og:description" content="http:&#x2F;&#x2F;www.regexr.com&#x2F;http:&#x2F;&#x2F;www.cnblogs.com&#x2F;huxi&#x2F;archive&#x2F;2010&#x2F;07&#x2F;04&#x2F;1771073.html 中文^((?!(\*|&#x2F;&#x2F;)).)+[\u4e00-\u9fa5]  1 . 校验密码强度密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间。 ^(?&#x3D;.*\\d)(?&#x3D;.*[a-z])(?&#x3D;.*[A-">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-10-09T07:02:48.000Z">
+<meta property="article:modified_time" content="2024-01-21T02:28:35.946Z">
+<meta property="article:author" content="Renzhao">
+<meta property="article:tag" content="正则">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://renzhaozhao.github.io/2016/10/09/%E6%AD%A3%E5%88%99%E6%9C%AD%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>正则札记 | Renzhao's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <script type="text/javascript" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Renzhao's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://renzhaozhao.github.io/2016/10/09/%E6%AD%A3%E5%88%99%E6%9C%AD%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Renzhao">
+      <meta itemprop="description" content="大前端之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Renzhao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          正则札记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-10-09 15:02:48" itemprop="dateCreated datePublished" datetime="2016-10-09T15:02:48+08:00">2016-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-21 10:28:35" itemprop="dateModified" datetime="2024-01-21T10:28:35+08:00">2024-01-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="http://www.regexr.com/" target="_blank" rel="noopener">http://www.regexr.com/</a><br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="noopener">http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html</a></p>
+<h3 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h3><figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^((?!(<span class="symbol">\*</span>|//)).)+[<span class="symbol">\u</span>4e00-<span class="symbol">\u</span>9fa5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1 . 校验密码强度"></a>1 . 校验密码强度</h3><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间。</p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">^<span class="comment">(?=.*\\d)</span><span class="comment">(?=.*[a-z])</span><span class="comment">(?=.*[A-Z])</span>.&#123;<span class="number">8</span>,<span class="number">10</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2. 校验中文"></a>2. 校验中文</h3><p>字符串仅能是中文。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^[<span class="symbol">\\</span>u4e00-<span class="symbol">\\</span>u9fa5]&#123;0,&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-由数字、26-个英文字母或下划线组成的字符串"><a href="#3-由数字、26-个英文字母或下划线组成的字符串" class="headerlink" title="3. 由数字、26 个英文字母或下划线组成的字符串"></a>3. 由数字、26 个英文字母或下划线组成的字符串</h3><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">^\\w+<span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-校验-E-Mail-地址"><a href="#4-校验-E-Mail-地址" class="headerlink" title="4. 校验 E-Mail 地址"></a>4. 校验 E-Mail 地址</h3><p>同密码一样，下面是 E-mail 地址合规性的正则检查语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+(?:\\.[<span class="string">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+)<span class="emphasis">*@(?:[\\w](?:[\\w-]*</span>[<span class="string">\\w</span>])?\\.)+[<span class="string">\\w</span>](<span class="link">?:[\\w-]*[\\w]</span>)?</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-校验身份证号码"><a href="#5-校验身份证号码" class="headerlink" title="5. 校验身份证号码"></a>5. 校验身份证号码</h3><p>下面是身份证号码的正则校验。15 或 18 位。<br>15</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">7</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span><span class="number">-2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span><span class="number">-1</span>])\\d&#123;<span class="number">3</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<p>18</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">5</span>&#125;[<span class="number">1</span><span class="number">-9</span>]\\d&#123;<span class="number">3</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span><span class="number">-2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span><span class="number">-1</span>])\\d&#123;<span class="number">3</span>&#125;([<span class="number">0</span><span class="number">-9</span>]|X)$</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-校验日期"><a href="#6-校验日期" class="headerlink" title="6. 校验日期"></a>6. 校验日期</h3><p>yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">^(?:(?!0000)[<span class="string">0-9</span>]&#123;4&#125;-(?:(?:0[<span class="string">1-9</span>]|1[<span class="string">0-2</span>])-(?:0[<span class="string">1-9</span>]|1[<span class="string">0-9</span>]|2[<span class="string">0-8</span>])|(?:0[<span class="string">13-9</span>]|1[<span class="string">0-2</span>])-(?:29|30)|(?:0[<span class="string">13578</span>]|1[<span class="string">02</span>])-31)|(?:[<span class="string">0-9</span>]&#123;2&#125;(?:0[<span class="string">48</span>]|[<span class="string">2468</span>][<span class="symbol">048</span>]|[<span class="string">13579</span>][<span class="symbol">26</span>])|(?:0[<span class="string">48</span>]|[<span class="string">2468</span>][<span class="symbol">048</span>]|[<span class="string">13579</span>][<span class="symbol">26</span>])00)-02-29)$</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-校验金额"><a href="#7-校验金额" class="headerlink" title="7. 校验金额"></a>7. 校验金额</h3><p>金额校验，精确到 2 位小数。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^[<span class="number">0</span><span class="number">-9</span>]+(.[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">2</span>&#125;)?$</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-校验手机号"><a href="#8-校验手机号" class="headerlink" title="8. 校验手机号"></a>8. 校验手机号</h3><p>下面是国内 13、15、18 开头的手机号正则表达式。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^(<span class="number">13</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">14</span>[<span class="number">5</span>|<span class="number">7</span>]|<span class="number">15</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>]|<span class="number">18</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>])\\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-判断-IE-的版本"><a href="#9-判断-IE-的版本" class="headerlink" title="9. 判断 IE 的版本"></a>9. 判断 IE 的版本</h3><p>IE 目前还没被完全取代，很多页面还是需要做版本兼容，下面是 IE 版本检查的表达式。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">^.*MSIE [<span class="number">5</span><span class="number">-8</span>](?:\\.[<span class="number">0</span><span class="number">-9</span>]+)?(?!.*Trident\\/[<span class="number">5</span><span class="number">-9</span>]\\<span class="number">.0</span>).*$</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-校验-IP-v4-地址"><a href="#10-校验-IP-v4-地址" class="headerlink" title="10. 校验 IP-v4 地址"></a>10. 校验 IP-v4 地址</h3><p>IP4 正则语句。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\\b(?:(?:25[<span class="string">0-5</span>]|2[<span class="string">0-4</span>][<span class="symbol">0-9</span>]|[<span class="string">01</span>]?[<span class="string">0-9</span>][<span class="symbol">0-9</span>]?)\\.)&#123;3&#125;(?:25[<span class="string">0-5</span>]|2[<span class="string">0-4</span>][<span class="symbol">0-9</span>]|[<span class="string">01</span>]?[<span class="string">0-9</span>][<span class="symbol">0-9</span>]?)\\b</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-校验-IP-v6-地址"><a href="#11-校验-IP-v6-地址" class="headerlink" title="11. 校验 IP-v6 地址"></a>11. 校验 IP-v6 地址</h3><p>IP6 正则语句。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">(([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">7</span>,<span class="number">7</span>&#125;[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;:|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;|[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;)|:((:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;|:)|fe80:(:[<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">0</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">4</span>&#125;%[<span class="number">0</span><span class="number">-9</span>a-zA-Z]&#123;<span class="number">1</span>,&#125;|::(ffff(:<span class="number">0</span>&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;:)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;((<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])|([<span class="number">0</span><span class="number">-9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|(<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span><span class="number">-9</span>]))</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-检查-URL-的前缀"><a href="#12-检查-URL-的前缀" class="headerlink" title="12. 检查 URL 的前缀"></a>12. 检查 URL 的前缀</h3><p>应用开发中很多时候需要区分请求是 HTTPS 还是 HTTP，通过下面的表达式可以取出一个 url 的前缀然后再逻辑判断。</p>
+<figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!s.<span class="keyword">match</span>(/^[a-zA-Z]+:\\/\\<span class="comment">//))</span></span><br><span class="line">&#123;</span><br><span class="line">    s = <span class="symbol">'http</span>:<span class="comment">//' + s;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-提取-URL-链接"><a href="#13-提取-URL-链接" class="headerlink" title="13. 提取 URL 链接"></a>13. 提取 URL 链接</h3><p>下面的这个表达式可以筛选出一段文本中的 URL。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^(f|ht)&#123;1&#125;(tp|tps):<span class="symbol">\\</span>/<span class="symbol">\\</span>/([<span class="symbol">\\</span>w-]+<span class="symbol">\\</span>.)+[<span class="symbol">\\</span>w-]+(<span class="symbol">\\</span>/[<span class="symbol">\\</span>w- ./?<span class="variable">%&amp;=]*)?</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-文件路径及扩展名校验"><a href="#14-文件路径及扩展名校验" class="headerlink" title="14. 文件路径及扩展名校验"></a>14. 文件路径及扩展名校验</h3><p>验证文件路径和扩展名</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^([a-zA-Z]<span class="symbol">\\</span>:|<span class="symbol">\\</span><span class="symbol">\\</span>)<span class="symbol">\\</span><span class="symbol">\\</span>([^<span class="symbol">\\</span><span class="symbol">\\</span>]+<span class="symbol">\\</span><span class="symbol">\\</span>)*[^<span class="symbol">\\</span>/:*?"&lt;&gt;|]+<span class="symbol">\\</span>.txt(l)?$</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-提取-Color-Hex-Codes"><a href="#15-提取-Color-Hex-Codes" class="headerlink" title="15. 提取 Color Hex Codes"></a>15. 提取 Color Hex Codes</h3><p>有时需要抽取网页中的颜色代码，可以使用下面的表达式。</p>
+<figure class="highlight leaf"><table><tr><td class="code"><pre><span class="line">\\<span class="function"><span class="keyword">#</span><span class="params">([<span class="variable">a</span>-<span class="variable">fA</span>-<span class="variable">F</span>]|[0-9])</span></span>&#123;3,6&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="16-提取网页图片"><a href="#16-提取网页图片" class="headerlink" title="16. 提取网页图片"></a>16. 提取网页图片</h3><p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line"><span class="symbol">\\</span>&lt; *[img][^<span class="symbol">\\</span>&gt;]*[src] *= *[<span class="symbol">\\</span>"<span class="symbol">\\</span>']&#123;0,1&#125;([^<span class="symbol">\\</span>"<span class="symbol">\\</span>'<span class="symbol">\\</span> &gt;]*)</span><br></pre></td></tr></table></figure>
+
+<h3 id="17-提取页面超链接"><a href="#17-提取页面超链接" class="headerlink" title="17. 提取页面超链接"></a>17. 提取页面超链接</h3><p>提取 html 中的超链接。</p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line"><span class="comment">(&lt;a\\s*(?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(href="https?://)</span><span class="comment">((?!(?:(?:www\\.)</span>?<span class="string">'.implode('</span>|<span class="comment">(?:www\\.)</span>?<span class="string">', $follow_list).'</span>))[^<span class="string">"]+)"</span><span class="comment">((?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(?:[^&gt;]*)</span>&gt;&lt;/a\\s*<span class="comment">(?!.*\\brel=)</span>[^&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="18-精炼-CSS"><a href="#18-精炼-CSS" class="headerlink" title="18. 精炼 CSS"></a>18. 精炼 CSS</h3><p>通过下面的表达式，可以搜索相同属性值的 CSS，从而达到精炼代码的目的。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">^<span class="symbol">\\</span>s*[a-zA-Z<span class="symbol">\\</span>-]+<span class="symbol">\\</span>s*[:]&#123;1&#125;<span class="symbol">\\</span>s[a-zA-Z0-9<span class="symbol">\\</span>s.#]+[;]&#123;1&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="19-抽取注释"><a href="#19-抽取注释" class="headerlink" title="19. 抽取注释"></a>19. 抽取注释</h3><p>如果你需要移除 HMTL 中的注释，可以使用如下的表达式。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--(.*?)--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="20-匹配-HTML-标签"><a href="#20-匹配-HTML-标签" class="headerlink" title="20. 匹配 HTML 标签"></a>20. 匹配 HTML 标签</h3><p>通过下面的表达式可以匹配出 HTML 中的标签。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line"><span class="symbol">\\</span>s]+))?)+<span class="symbol">\\</span>s*|<span class="symbol">\\</span>s*)/?&gt;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%AD%A3%E5%88%99/" rel="tag"># 正则</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/09/12/%E7%AE%97%E6%B3%95%E6%9C%AD%E8%AE%B0/" rel="prev" title="算法札记">
+      <i class="fa fa-chevron-left"></i> 算法札记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/09/12/React-Router4-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD/" rel="next" title="React Router4 按需加载">
+      React Router4 按需加载 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文"><span class="nav-number">1.</span> <span class="nav-text">中文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-校验密码强度"><span class="nav-number">2.</span> <span class="nav-text">1 . 校验密码强度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-校验中文"><span class="nav-number">3.</span> <span class="nav-text">2. 校验中文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-由数字、26-个英文字母或下划线组成的字符串"><span class="nav-number">4.</span> <span class="nav-text">3. 由数字、26 个英文字母或下划线组成的字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-校验-E-Mail-地址"><span class="nav-number">5.</span> <span class="nav-text">4. 校验 E-Mail 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-校验身份证号码"><span class="nav-number">6.</span> <span class="nav-text">5. 校验身份证号码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-校验日期"><span class="nav-number">7.</span> <span class="nav-text">6. 校验日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-校验金额"><span class="nav-number">8.</span> <span class="nav-text">7. 校验金额</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-校验手机号"><span class="nav-number">9.</span> <span class="nav-text">8. 校验手机号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-判断-IE-的版本"><span class="nav-number">10.</span> <span class="nav-text">9. 判断 IE 的版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-校验-IP-v4-地址"><span class="nav-number">11.</span> <span class="nav-text">10. 校验 IP-v4 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-校验-IP-v6-地址"><span class="nav-number">12.</span> <span class="nav-text">11. 校验 IP-v6 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-检查-URL-的前缀"><span class="nav-number">13.</span> <span class="nav-text">12. 检查 URL 的前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-提取-URL-链接"><span class="nav-number">14.</span> <span class="nav-text">13. 提取 URL 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-文件路径及扩展名校验"><span class="nav-number">15.</span> <span class="nav-text">14. 文件路径及扩展名校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-提取-Color-Hex-Codes"><span class="nav-number">16.</span> <span class="nav-text">15. 提取 Color Hex Codes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-提取网页图片"><span class="nav-number">17.</span> <span class="nav-text">16. 提取网页图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-提取页面超链接"><span class="nav-number">18.</span> <span class="nav-text">17. 提取页面超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-精炼-CSS"><span class="nav-number">19.</span> <span class="nav-text">18. 精炼 CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-抽取注释"><span class="nav-number">20.</span> <span class="nav-text">19. 抽取注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-匹配-HTML-标签"><span class="nav-number">21.</span> <span class="nav-text">20. 匹配 HTML 标签</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Renzhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Renzhao</p>
+  <div class="site-description" itemprop="description">大前端之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Renzhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
